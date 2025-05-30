@@ -1,271 +1,181 @@
 ---
 ---
 
-<section id="features" class="py-24 bg-gray-950">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">    <div class="text-center mb-16 fade-in-up">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+<section id="features" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in-up">
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
         Key Features
       </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-        Two revolutionary advancements that enable comprehensive multi-agent research in open-world environments
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+        Current embodied AI platforms are constrained by limited environments and small agent populations, failing to capture the complexity of real-world scenarios. Virtual Community addresses these challenges by integrating large-scale geospatial data with generative models to create interactive, scalable open-world scenes with socially grounded agent communities.
       </p>
     </div>
     
     <div class="grid lg:grid-cols-2 gap-12">
       <!-- Feature 1: Scalable Scenes -->
-      <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 p-8 rounded-2xl border border-blue-500/20 slide-in-left">
+      <div class="bg-white p-8 border border-slate-200 shadow-sm slide-in-left">
         <div class="flex items-center mb-6">
-          <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
-            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-12 h-12 bg-slate-100 border border-slate-200 flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-white">Scalable Simulation-Ready Scenes</h3>
+          <h3 class="text-2xl font-bold text-slate-900">Scalable Simulation-Ready Scenes</h3>
         </div>
         
-        <p class="text-gray-300 mb-6 leading-relaxed">
+        <p class="text-slate-600 mb-6 leading-relaxed">
           Fully automatic generation of 3D environments from real-world geospatial data, 
           combining generative models with real-world scenarios for unprecedented scalability and realism.
-        </p>
-        
+        </p>        
         <div class="space-y-4">
           <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+            <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
             <div>
-              <div class="text-white font-semibold">Scalable Outdoor Scenes</div>
-              <div class="text-gray-400 text-sm">Customizable sizes with corresponding indoor environments</div>
+              <div class="text-slate-900 font-semibold">Scalable Outdoor Scenes</div>
+              <div class="text-slate-600 text-sm">Customizable sizes with corresponding indoor environments</div>
             </div>
           </div>
           
           <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+            <div class="w-2 h-2 bg-slate-500 mt-2 flex-shrink-0"></div>
             <div>
-              <div class="text-white font-semibold">Automatic Annotations</div>
-              <div class="text-gray-400 text-sm">Locations and objects automatically labeled within scenes</div>
+              <div class="text-slate-900 font-semibold">Automatic Annotations</div>
+              <div class="text-slate-600 text-sm">Locations and objects automatically labeled within scenes</div>
             </div>
           </div>
           
           <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-blue-300 rounded-full mt-2 flex-shrink-0"></div>
+            <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
             <div>
-              <div class="text-white font-semibold">Real-World Integration</div>
-              <div class="text-gray-400 text-sm">Geospatial data ensures both realism and scene diversity</div>
+              <div class="text-slate-900 font-semibold">Real-World Integration</div>
+              <div class="text-slate-600 text-sm">Geospatial data ensures both realism and scene diversity</div>
             </div>
           </div>
         </div>
-          <!-- Technical Details -->
-        <div class="mt-6 pt-6 border-t border-blue-500/20">
-          <div class="text-sm text-gray-400 mb-3">Technical Pipeline:</div>
-          <div class="grid grid-cols-2 gap-3 text-xs relative">
-            <!-- Animated data flow lines -->
-            <div class="absolute inset-0 pointer-events-none">
-              <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="dataFlow1" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
-                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0">
-                      <animate attributeName="stop-opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
-                    </stop>
-                    <stop offset="50%" style="stop-color:#06B6D4;stop-opacity:0.7">
-                      <animate attributeName="stop-opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
-                    </stop>
-                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0">
-                      <animate attributeName="stop-opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
-                    </stop>
-                  </linearGradient>
-                  <linearGradient id="dataFlow2" x1="0%" y1="100%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
-                    <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:0">
-                      <animate attributeName="stop-opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
-                    </stop>
-                    <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:0.7">
-                      <animate attributeName="stop-opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
-                    </stop>
-                    <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0">
-                      <animate attributeName="stop-opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
-                    </stop>
-                  </linearGradient>
-                </defs>
-                <path d="M25,25 Q50,10 75,25" stroke="url(#dataFlow1)" stroke-width="0.5" fill="none" opacity="0.6"/>
-                <path d="M25,75 Q50,90 75,75" stroke="url(#dataFlow2)" stroke-width="0.5" fill="none" opacity="0.6"/>
-                <path d="M25,25 L25,75" stroke="url(#dataFlow1)" stroke-width="0.3" fill="none" opacity="0.4"/>
-                <path d="M75,25 L75,75" stroke="url(#dataFlow2)" stroke-width="0.3" fill="none" opacity="0.4"/>
-              </svg>
+        
+        <!-- Technical Details -->
+        <div class="mt-6 pt-6 border-t border-slate-200">
+          <div class="text-sm text-slate-600 mb-3">Technical Pipeline:</div>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="bg-slate-50 p-2 border border-slate-200">
+              <div class="text-slate-700 font-semibold">Geometry</div>
+              <div class="text-slate-600">Mesh simplification</div>
             </div>
-            
-            <div class="bg-gray-800/50 p-2 rounded border border-gray-700 relative overflow-hidden group">
-              <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div class="relative">
-                <div class="text-blue-400 font-semibold">Geometry</div>
-                <div class="text-gray-300">Mesh simplification</div>
-              </div>
+            <div class="bg-slate-50 p-2 border border-slate-200">
+              <div class="text-slate-700 font-semibold">Texture</div>
+              <div class="text-slate-600">Enhancement & repair</div>
             </div>
-            <div class="bg-gray-800/50 p-2 rounded border border-gray-700 relative overflow-hidden group">
-              <div class="absolute inset-0 bg-gradient-to-l from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div class="relative">
-                <div class="text-cyan-400 font-semibold">Texture</div>
-                <div class="text-gray-300">Enhancement & repair</div>
-              </div>
+            <div class="bg-slate-50 p-2 border border-slate-200">
+              <div class="text-slate-700 font-semibold">Objects</div>
+              <div class="text-slate-600">Interactive placement</div>
             </div>
-            <div class="bg-gray-800/50 p-2 rounded border border-gray-700 relative overflow-hidden group">
-              <div class="absolute inset-0 bg-gradient-to-r from-blue-300/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div class="relative">
-                <div class="text-blue-300 font-semibold">Objects</div>
-                <div class="text-gray-300">Interactive placement</div>
-              </div>
-            </div>
-            <div class="bg-gray-800/50 p-2 rounded border border-gray-700 relative overflow-hidden group">
-              <div class="absolute inset-0 bg-gradient-to-l from-blue-200/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div class="relative">
-                <div class="text-blue-200 font-semibold">Indoor</div>
-                <div class="text-gray-300">Multi-room generation</div>
-              </div>
+            <div class="bg-slate-50 p-2 border border-slate-200">
+              <div class="text-slate-700 font-semibold">Indoor</div>
+              <div class="text-slate-600">Multi-room generation</div>
             </div>
           </div>
         </div>
       </div>
       
       <!-- Feature 2: Agent Communities -->
-      <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-purple-500/20 slide-in-right">
+      <div class="bg-white p-8 border border-slate-200 shadow-sm slide-in-right">
         <div class="flex items-center mb-6">
-          <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
-            <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-12 h-12 bg-slate-100 border border-slate-200 flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-white">Scene-Grounded Agent Communities</h3>
+          <h3 class="text-2xl font-bold text-slate-900">Scene-Grounded Agent Communities</h3>
         </div>
         
-        <p class="text-gray-300 mb-6 leading-relaxed">
+        <p class="text-slate-600 mb-6 leading-relaxed">
           Leverages foundation models and real-world scene annotations to generate 
           avatar agents with grounded profiles and social relationship networks.
         </p>
         
         <div class="space-y-4">
           <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+            <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
             <div>
-              <div class="text-white font-semibold">Character Generation</div>
-              <div class="text-gray-400 text-sm">LLM-powered profiles with personalities and social connections</div>
+              <div class="text-slate-900 font-semibold">Character Generation</div>
+              <div class="text-slate-600 text-sm">LLM-powered profiles with personalities and social connections</div>
             </div>
           </div>
           
           <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-pink-400 rounded-full mt-2 flex-shrink-0"></div>
+            <div class="w-2 h-2 bg-slate-500 mt-2 flex-shrink-0"></div>
             <div>
-              <div class="text-white font-semibold">Social Networks</div>
-              <div class="text-gray-400 text-sm">Groups and relationships that drive community behaviors</div>
+              <div class="text-slate-900 font-semibold">Social Networks</div>
+              <div class="text-slate-600 text-sm">Groups and relationships that drive community behaviors</div>
             </div>
           </div>
           
           <div class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-purple-300 rounded-full mt-2 flex-shrink-0"></div>
+            <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
             <div>
-              <div class="text-white font-semibold">Physics Simulation</div>
-              <div class="text-gray-400 text-sm">Genesis engine powers realistic agent interactions</div>
+              <div class="text-slate-900 font-semibold">Physics Simulation</div>
+              <div class="text-slate-600 text-sm">Genesis engine powers realistic agent interactions</div>
             </div>
           </div>
         </div>
-          <!-- Agent Examples -->
-        <div class="mt-6 pt-6 border-t border-purple-500/20">
-          <div class="text-sm text-gray-400 mb-3">Agent Examples:</div>
-          <div class="space-y-2 relative">
-            <!-- Animated social network lines -->
-            <div class="absolute inset-0 pointer-events-none">
-              <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="socialFlow1" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="objectBoundingBox">
-                    <stop offset="0%" style="stop-color:#A855F7;stop-opacity:0">
-                      <animate attributeName="stop-opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
-                    </stop>
-                    <stop offset="50%" style="stop-color:#EC4899;stop-opacity:0.6">
-                      <animate attributeName="stop-opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
-                    </stop>
-                    <stop offset="100%" style="stop-color:#A855F7;stop-opacity:0">
-                      <animate attributeName="stop-opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
-                    </stop>
-                  </linearGradient>
-                  <linearGradient id="socialFlow2" x1="100%" y1="0%" x2="0%" y2="100%" gradientUnits="objectBoundingBox">
-                    <stop offset="0%" style="stop-color:#EC4899;stop-opacity:0">
-                      <animate attributeName="stop-opacity" values="0;0.8;0" dur="3.5s" repeatCount="indefinite" begin="1s"/>
-                    </stop>
-                    <stop offset="50%" style="stop-color:#A855F7;stop-opacity:0.6">
-                      <animate attributeName="stop-opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" begin="1s"/>
-                    </stop>
-                    <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0">
-                      <animate attributeName="stop-opacity" values="0;0.8;0" dur="3.5s" repeatCount="indefinite" begin="1s"/>
-                    </stop>
-                  </linearGradient>
-                </defs>
-                <path d="M10,25 Q50,5 90,25" stroke="url(#socialFlow1)" stroke-width="0.4" fill="none" opacity="0.7"/>
-                <path d="M10,75 Q50,95 90,75" stroke="url(#socialFlow2)" stroke-width="0.4" fill="none" opacity="0.7"/>
-                <circle cx="10" cy="25" r="1" fill="#A855F7" opacity="0.6">
-                  <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="90" cy="75" r="1" fill="#EC4899" opacity="0.6">
-                  <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" begin="1s"/>
-                </circle>
-              </svg>
-            </div>
-              <div class="bg-gray-800/50 p-3 rounded border border-gray-700 relative overflow-hidden group">
-              <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div class="relative">
-                <div class="flex items-center justify-between mb-2">
-                  <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center">
-                      <span class="text-xs font-bold text-purple-400">CT</span>
-                    </div>
-                    <div>
-                      <div class="text-purple-400 font-semibold text-sm">Chad Thompson</div>
-                      <div class="text-gray-300 text-xs">Groups: ["Berlin Foodies Club"]</div>
-                    </div>
+        
+        <!-- Agent Examples -->
+        <div class="mt-6 pt-6 border-t border-slate-200">
+          <div class="text-sm text-slate-600 mb-3">Agent Examples:</div>
+          <div class="space-y-2">
+            <div class="bg-slate-50 p-3 border border-slate-200">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 bg-slate-200 border border-slate-300 flex items-center justify-center">
+                    <span class="text-xs font-bold text-slate-700">CT</span>
                   </div>
-                  <div class="text-xs text-gray-400">
-                    Living: Palais
+                  <div>
+                    <div class="text-slate-900 font-semibold text-sm">Chad Thompson</div>
+                    <div class="text-slate-600 text-xs">Groups: ["Berlin Foodies Club"]</div>
                   </div>
                 </div>
-                <div class="text-xs text-gray-500">Lifestyle: Social, Values: Community</div>
+                <div class="text-xs text-slate-600">
+                  Living: Palais
+                </div>
               </div>
+              <div class="text-xs text-slate-500">Lifestyle: Social, Values: Community</div>
             </div>
             
-            <div class="bg-gray-800/50 p-3 rounded border border-gray-700 relative overflow-hidden group">
-              <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div class="relative">
-                <div class="flex items-center justify-between mb-2">
-                  <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center">
-                      <span class="text-xs font-bold text-pink-400">KN</span>
-                    </div>
-                    <div>
-                      <div class="text-pink-400 font-semibold text-sm">Kate Novak</div>
-                      <div class="text-gray-300 text-xs">Groups: ["Campus"], Student</div>
-                    </div>
+            <div class="bg-slate-50 p-3 border border-slate-200">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 bg-slate-200 border border-slate-300 flex items-center justify-center">
+                    <span class="text-xs font-bold text-slate-700">KN</span>
                   </div>
-                  <div class="text-xs text-gray-400">
-                    Living: McCormick
+                  <div>
+                    <div class="text-slate-900 font-semibold text-sm">Kate Novak</div>
+                    <div class="text-slate-600 text-xs">Groups: ["Campus"], Student</div>
                   </div>
                 </div>
-                <div class="text-xs text-gray-500">Cash: $50, Values: Education, Growth</div>
+                <div class="text-xs text-slate-600">
+                  Living: McCormick
+                </div>
               </div>
+              <div class="text-xs text-slate-500">Cash: $50, Values: Education, Growth</div>
             </div>
 
-            <div class="bg-gray-800/50 p-3 rounded border border-gray-700 relative overflow-hidden group">
-              <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div class="relative">
-                <div class="flex items-center justify-between mb-2">
-                  <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-cyan-500/20 rounded-full flex items-center justify-center">
-                      <span class="text-xs font-bold text-cyan-400">EM</span>
-                    </div>
-                    <div>
-                      <div class="text-cyan-400 font-semibold text-sm">Elon Musk</div>
-                      <div class="text-gray-300 text-xs">Values: Power, Innovation</div>
-                    </div>
+            <div class="bg-slate-50 p-3 border border-slate-200">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 bg-slate-200 border border-slate-300 flex items-center justify-center">
+                    <span class="text-xs font-bold text-slate-700">EM</span>
                   </div>
-                  <div class="text-xs text-gray-400">
-                    Cash: $1000
+                  <div>
+                    <div class="text-slate-900 font-semibold text-sm">Elon Musk</div>
+                    <div class="text-slate-600 text-xs">Values: Power, Innovation</div>
                   </div>
                 </div>
-                <div class="text-xs text-gray-500">Lifestyle: Innovative, Entrepreneur</div>
+                <div class="text-xs text-slate-600">
+                  Cash: $1000
+                </div>
               </div>
+              <div class="text-xs text-slate-500">Lifestyle: Innovative, Entrepreneur</div>
             </div>
           </div>
         </div>
@@ -274,33 +184,34 @@
     
     <!-- Additional Features Grid -->
     <div class="grid md:grid-cols-3 gap-6 mt-16 stagger-children">
-      <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700 text-center">
-        <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-          <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-white p-6 border border-slate-200 shadow-sm text-center">
+        <div class="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </div>
-        <h4 class="text-lg font-semibold text-white mb-2">Dynamic Traffic</h4>
-        <p class="text-gray-400 text-sm">Automated traffic generation with vehicles, pedestrians, and transit system based on real road networks</p>
+        <h4 class="text-lg font-semibold text-slate-900 mb-2">Dynamic Traffic</h4>
+        <p class="text-slate-600 text-sm">Automated traffic generation with vehicles, pedestrians, and transit system based on real road networks</p>
       </div>
-        <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700 text-center">
-        <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-          <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      
+      <div class="bg-white p-6 border border-slate-200 shadow-sm text-center">
+        <div class="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
           </svg>
         </div>
-        <h4 class="text-lg font-semibold text-white mb-2">Daily Schedules Completion</h4>
-        <p class="text-gray-400 text-sm">Agents carry out realistic daily routines based on automatically generated activity schedules</p>
+        <h4 class="text-lg font-semibold text-slate-900 mb-2">Daily Schedules Completion</h4>
+        <p class="text-slate-600 text-sm">Agents carry out realistic daily routines based on automatically generated activity schedules</p>
       </div>
       
-      <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700 text-center">
-        <div class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-          <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-white p-6 border border-slate-200 shadow-sm text-center">
+        <div class="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
           </svg>
         </div>
-        <h4 class="text-lg font-semibold text-white mb-2">Research Challenges</h4>
-        <p class="text-gray-400 text-sm">Community Planning and Community Robot challenges for advancing embodied AI research</p>
+        <h4 class="text-lg font-semibold text-slate-900 mb-2">Research Challenges</h4>
+        <p class="text-slate-600 text-sm">Community Planning and Community Robot challenges for advancing embodied AI research</p>
       </div>
     </div>
   </div>

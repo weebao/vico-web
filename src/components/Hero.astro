@@ -1,66 +1,61 @@
 ---
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Background gradient -->
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-gray-900"></div>
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+  <!-- Clean background -->
+  <div class="absolute inset-0 bg-gray-50"></div>
   
-  <!-- Animated background particles -->
+  <!-- Subtle accent elements -->
   <div class="absolute inset-0">
-    <div class="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-    <div class="absolute top-40 right-20 w-1 h-1 bg-purple-400 rounded-full animate-pulse delay-300"></div>
-    <div class="absolute bottom-40 left-20 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse delay-700"></div>
-    <div class="absolute bottom-20 right-10 w-2 h-2 bg-indigo-400 rounded-full animate-pulse delay-1000"></div>
+    <div class="absolute top-20 left-10 w-1 h-1 bg-slate-400 opacity-30"></div>
+    <div class="absolute top-40 right-20 w-1 h-1 bg-slate-500 opacity-40"></div>
+    <div class="absolute bottom-40 left-20 w-1 h-1 bg-slate-400 opacity-30"></div>
+    <div class="absolute bottom-20 right-10 w-1 h-1 bg-slate-500 opacity-40"></div>
   </div>
     <main class="relative z-10 max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center">
-    <div class="space-y-10 pt-32 pb-8">      <h1 class="hero-animate text-5xl md:text-7xl mb-4 font-bold leading-tight">
-        <span class="bg-gradient-to-r from-white via-blue-400 to-purple-400 bg-clip-text text-transparent">
-          Virtual Community
-        </span>
+    <div class="space-y-10 pt-32 pb-8">      <h1 class="hero-animate text-5xl md:text-7xl mb-4 font-bold leading-tight text-slate-900">
+        Virtual Community
       </h1>
         <!-- Subtitle -->
-      <p class="hero-animate hero-animate-delay text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-        An Open World Simulation Platform for <span class="text-blue-400 font-semibold">Multi-Agent Embodied AI</span>
-      </p>      
-      <!-- CTA Buttons -->
+      <p class="hero-animate hero-animate-delay text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
+        An Open World Simulation Platform for <span class="text-slate-900 font-semibold">Multi-Agent Embodied AI</span>
+      </p>      <!-- CTA Buttons -->
       <div class="hero-animate hero-animate-delay-2 flex flex-col sm:flex-row gap-6 justify-center items-center stagger-children">
-        <a href="#demo" class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+        <a href="#demo" class="group inline-flex items-center px-8 py-4 bg-slate-900 text-white font-semibold rounded hover:bg-slate-800 transition-all shadow hover:shadow-md">
           <span>Explore Demo</span>
           <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
         
-        <a href="#research" class="inline-flex items-center px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:border-gray-500 hover:text-white transition-all">
+        <a href="#research" class="inline-flex items-center px-8 py-4 border border-slate-300 text-slate-700 font-semibold rounded hover:border-slate-400 hover:text-slate-900 transition-all">
           <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
           </svg>
           Read Research
         </a>
-      </div>
-        <!-- Main Video Placeholder -->
+      </div>        <!-- Main Video Placeholder -->
       <div class="hero-animate hero-animate-delay-3 py-8 max-w-4xl mx-auto">
-        <div class="relative bg-gray-800/50 rounded-xl border border-gray-700 overflow-hidden group hover:border-gray-600 transition-colors">
-          <div class="aspect-video flex items-center justify-center bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+        <div class="relative bg-white border border-slate-200 overflow-hidden group hover:border-slate-300 transition-colors shadow-sm">
+          <div class="aspect-video flex items-center justify-center bg-slate-50">
             <div class="text-center">
-              <div class="w-20 h-20 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gray-600 transition-colors">
-                <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+              <div class="w-20 h-20 mx-auto mb-4 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
+                <svg class="w-8 h-8 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
                 </svg>
               </div>
-              <p class="text-gray-400 font-medium">Main Platform Demo Video</p>
-              <p class="text-sm text-gray-500 mt-1">Overview of Virtual Community capabilities</p>
+              <p class="text-slate-700 font-medium">Main Platform Demo Video</p>
+              <p class="text-sm text-slate-500 mt-1">Overview of Virtual Community capabilities</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </di>
-  
+  </main>  
   <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
     <div class="animate-bounce">
-      <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
