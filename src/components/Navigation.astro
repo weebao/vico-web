@@ -26,30 +26,32 @@ const sortedSidebarItems = sidebarItems.sort((a, b) => {
 ---
 
 <nav class="fixed top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-8">
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="text-2xl font-bold text-slate-900">
+        <a href="/" class="text-fluid-2xl font-bold text-slate-900">
           Virtual Community
         </a>
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex ml-10 items-baseline space-x-4">
-        <a href="/docs" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Documentation</a>
-        <a href="/#features" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Features</a>
-        <a href="/#demo" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Demo</a>
-        <a href="/#authors" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Authors</a>
-        <a href="/docs/getting-started" class="bg-slate-900 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all">Get Started</a>
-      </div>
-      
-      <!-- Mobile menu button -->
+      <div class="hidden md:flex ml-10 items-center space-x-1">
+        <a href="/docs" class="text-slate-600 hover:text-slate-900 px-4 py-2 text-fluid-sm font-medium transition-colors rounded-lg hover:bg-slate-100">Documentation</a>
+        <a href="/#features" class="text-slate-600 hover:text-slate-900 px-4 py-2 text-fluid-sm font-medium transition-colors rounded-lg hover:bg-slate-100">Features</a>
+        <!-- <a href="/#demo" class="text-slate-600 hover:text-slate-900 px-4 py-2 text-fluid-sm font-medium transition-colors rounded-lg hover:bg-slate-100">Demo</a> -->
+        <a href="/#authors" class="text-slate-600 hover:text-slate-900 px-4 py-2 text-fluid-sm font-medium transition-colors rounded-lg hover:bg-slate-100">Authors</a>
+        <a href="https://github.com/virtualcommunityai/VirtualCommunity" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-900 px-4 py-2 text-fluid-sm font-medium transition-colors rounded-lg hover:bg-slate-100" aria-label="GitHub Repository">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>      <!-- Mobile menu button -->
       <div class="md:hidden">
         <button 
           type="button" 
           id="mobile-menu-button"
-          class="text-slate-600 hover:text-slate-900 p-2"
+          class="text-slate-600 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors"
           aria-label="Open menu"
         >
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -67,56 +69,57 @@ const sortedSidebarItems = sidebarItems.sort((a, b) => {
   <!-- Mobile Menu Sidebar -->
   <div 
     id="mobile-menu-sidebar" 
-    class="fixed top-0 right-0 h-dvh w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 z-[60] md:hidden overflow-y-visible border-l border-slate-200"
+    class="fixed top-0 right-0 h-dvh w-80 max-w-[90vw] bg-white shadow-xl transform translate-x-full transition-transform duration-300 z-[60] md:hidden overflow-y-auto border-l border-slate-200"
   >
     <!-- Mobile Menu Header -->
     <div class="flex bg-white justify-between items-center p-4 border-b border-slate-200">
-      <h2 class="text-lg font-semibold text-slate-900">Menu</h2>
+      <h2 class="text-fluid-lg font-semibold text-slate-900">Menu</h2>
       <button 
         type="button" 
         id="mobile-menu-close"
-        class="text-slate-600 hover:text-slate-900 p-2"
+        class="text-slate-600 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors"
         aria-label="Close menu"
       >
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-    </div>
-
-    <!-- Mobile Menu Content -->
+    </div>    <!-- Mobile Menu Content -->
     <div class="p-4">
       <!-- Main Navigation Links -->
       <div class="mb-6">
         <ul class="space-y-1">
           <li>
-            <a href="/" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+            <a href="/" class="block px-3 py-2 text-fluid-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
               Home
             </a>
           </li>
           <li>
-            <a href="/docs" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+            <a href="/docs" class="block px-3 py-2 text-fluid-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
               Documentation
             </a>
           </li>
           <li>
-            <a href="/#features" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+            <a href="/#features" class="block px-3 py-2 text-fluid-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
               Features
             </a>
           </li>
           <li>
-            <a href="/#demo" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+            <a href="/#demo" class="block px-3 py-2 text-fluid-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
               Demo
             </a>
           </li>
           <li>
-            <a href="/#authors" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+            <a href="/#authors" class="block px-3 py-2 text-fluid-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
               Authors
             </a>
           </li>
           <li>
-            <a href="/docs/getting-started" class="block px-3 py-2 text-sm bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-colors">
-              Get Started
+            <a href="https://github.com/virtualcommunityai" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 text-fluid-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+              </svg>
+              GitHub
             </a>
           </li>
         </ul>
@@ -125,15 +128,15 @@ const sortedSidebarItems = sidebarItems.sort((a, b) => {
       <!-- Documentation Sidebar (only show on docs pages) -->
       {isDocsPage && sortedSidebarItems.length > 0 && (
         <div class="border-t border-slate-200 pt-6">
-          <h3 class="text-sm font-semibold text-slate-900 mb-3">Documentation</h3>
+          <h3 class="text-fluid-sm font-semibold text-slate-900 mb-3">Documentation</h3>
           <ul class="space-y-1">
             {sortedSidebarItems.map((item) => (
               <li>
                 <a 
                   href={item.link}
-                  class={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                  class={`block px-3 py-2 text-fluid-sm rounded-lg transition-colors break-words ${
                     isActive(item.link) 
-                      ? 'bg-slate-900 text-white font-medium' 
+                      ? 'bg-slate-200 text-slate-900 font-medium' 
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   }`}
                 >

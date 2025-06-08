@@ -30,17 +30,16 @@ const isActive = (link: string) => {
 <aside class="hidden lg:block lg:col-span-1">
   <div class="lg:sticky lg:top-24">
     <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
-      <h2 class="text-lg font-semibold text-slate-900 mb-6">Documentation</h2>
+      <h2 class="text-fluid-lg font-semibold text-slate-900 mb-4">Documentation</h2>
       
       <nav>
         <ul class="space-y-1">
           {sortedItems.map((item) => (
             <li>
               <a 
-                href={item.link}
-                class={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                href={item.link}                class={`block px-3 py-2 text-fluid-sm rounded-md transition-colors break-words ${
                   isActive(item.link) 
-                    ? 'bg-slate-900 text-white font-medium' 
+                    ? 'bg-slate-200 text-slate-900 font-medium' 
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >

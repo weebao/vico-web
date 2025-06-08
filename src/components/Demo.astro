@@ -1,14 +1,18 @@
 ---
+// Import video assets using Vite optimization
+import demoVideo from '../assets/videos/demo.mp4'
+import manipContactVideo from '../assets/videos/manip_contact.mp4'
+import manipNoContactVideo from '../assets/videos/manip_nocontact.mp4'
 ---
 
 <section id="demo" class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16 fade-in-up">
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+      <h2 class="text-fluid-3xl font-bold text-slate-900 mb-6">
         Demo Videos
       </h2>
       <div class="max-w-4xl mx-auto">
-        <p class="text-lg text-slate-600 leading-relaxed">
+        <p class="text-fluid-lg text-slate-600 leading-relaxed">
           Two revolutionary advancements that enable comprehensive multi-agent research in open-world environments
         </p>
       </div>
@@ -16,65 +20,66 @@
     
     <!-- Real-World Aligned Scenes for Simulation -->
     <div class="mb-20 fade-in-up">
-      <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">Real-World Aligned Scenes for Simulation</h3>
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">Real-World Aligned Scenes for Simulation</h3>
       <div class="embla" id="scene-carousel">
         <div class="embla__container">
-          <!-- Video 1 -->
+          <!-- Demo Video -->
           <div class="embla__slide">
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2">
-              <div class="aspect-video bg-slate-50 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="w-16 h-16 mx-auto mb-3 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <svg class="w-6 h-6 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                    </svg>
-                  </div>
-                  <p class="text-slate-600 text-sm">Play Demo</p>
-                </div>
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video 
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src={demoVideo} type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div class="p-4">
-                <h4 class="font-semibold text-slate-900 mb-2">Manhattan Scene Generation</h4>
-                <p class="text-slate-600 text-sm">Real-time conversion of geospatial data into a fully interactive 3D environment with automatic object placement and semantic annotations.</p>
+                <h4 class="font-semibold text-slate-900 mb-2">Virtual Community Demo</h4>
+                <p class="text-slate-600 text-fluid-sm">Comprehensive demonstration of the Virtual Community platform showcasing real-world aligned scene generation and multi-agent interactions.</p>
               </div>
             </div>
           </div>
-          
-          <!-- Video 2 -->
+            <!-- Contact Manipulation Video -->
           <div class="embla__slide">
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2">
-              <div class="aspect-video bg-slate-50 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="w-16 h-16 mx-auto mb-3 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <svg class="w-6 h-6 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                    </svg>
-                  </div>
-                  <p class="text-slate-600 text-sm">Play Demo</p>
-                </div>
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video 
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src={manipContactVideo} type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div class="p-4">
-                <h4 class="font-semibold text-slate-900 mb-2">Campus Environment</h4>
-                <p class="text-slate-600 text-sm">University campus recreation with detailed building interiors, outdoor spaces, and realistic pedestrian pathways.</p>
+                <h4 class="font-semibold text-slate-900 mb-2">Contact-based Manipulation</h4>
+                <p class="text-slate-600 text-fluid-sm">Agents demonstrate sophisticated object manipulation skills with direct contact, showcasing realistic physical interactions in simulated environments.</p>
               </div>
             </div>
           </div>
-          
-          <!-- Video 3 -->
+            <!-- Non-Contact Manipulation Video -->
           <div class="embla__slide">
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2">
-              <div class="aspect-video bg-slate-50 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="w-16 h-16 mx-auto mb-3 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <svg class="w-6 h-6 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                    </svg>
-                  </div>
-                  <p class="text-slate-600 text-sm">Play Demo</p>
-                </div>
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video 
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src={manipNoContactVideo} type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div class="p-4">
-                <h4 class="font-semibold text-slate-900 mb-2">Residential District</h4>
-                <p class="text-slate-600 text-sm">Detailed neighborhood simulation with homes, commercial areas, and community spaces for diverse agent interactions.</p>
+                <h4 class="font-semibold text-slate-900 mb-2">Non-Contact Manipulation</h4>
+                <p class="text-slate-600 text-fluid-sm">Advanced manipulation techniques using indirect methods, demonstrating intelligent problem-solving and creative tool use.</p>
               </div>
             </div>
           </div>
@@ -84,65 +89,67 @@
     
     <!-- Agent Communities -->
     <div class="mb-20 fade-in-up">
-      <h3 class="text-3xl font-bold text-slate-900 mb-8 text-center">Scene-Grounded Agent Communities</h3>
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">Scene-Grounded Agent Communities</h3>
       <div class="embla" id="agent-carousel">
         <div class="embla__container">
-          <!-- Demo 1 -->
+          <!-- Contact Manipulation Demo -->
           <div class="embla__slide">
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2">
-              <div class="aspect-video bg-slate-50 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="w-16 h-16 mx-auto mb-3 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <svg class="w-6 h-6 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                    </svg>
-                  </div>
-                  <p class="text-slate-600 text-sm">Play Demo</p>
-                </div>
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video 
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src={manipContactVideo} type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div class="p-4">
-                <h4 class="font-semibold text-slate-900 mb-2">Multi-Agent Social Interactions</h4>
-                <p class="text-slate-600 text-sm">Agents with diverse backgrounds engage in realistic social behaviors, forming communities and pursuing individual goals.</p>
+                <h4 class="font-semibold text-slate-900 mb-2">Contact-based Manipulation</h4>
+                <p class="text-slate-600 text-fluid-sm">Agents demonstrate sophisticated object manipulation skills with direct contact, showcasing realistic physical interactions and dexterous control.</p>
               </div>
             </div>
           </div>
           
-          <!-- Demo 2 -->
+          <!-- No-Contact Manipulation Demo -->
           <div class="embla__slide">
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2">
-              <div class="aspect-video bg-slate-50 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="w-16 h-16 mx-auto mb-3 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <svg class="w-6 h-6 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                    </svg>
-                  </div>
-                  <p class="text-slate-600 text-sm">Play Demo</p>
-                </div>
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video 
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src={manipNoContactVideo} type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div class="p-4">
-                <h4 class="font-semibold text-slate-900 mb-2">Daily Routine Simulation</h4>
-                <p class="text-slate-600 text-sm">Agents follow realistic daily schedules, visiting different locations and interacting with their environment and each other.</p>
+                <h4 class="font-semibold text-slate-900 mb-2">Non-Contact Manipulation</h4>
+                <p class="text-slate-600 text-fluid-sm">Advanced manipulation techniques using indirect methods, demonstrating intelligent problem-solving and creative tool use without direct contact.</p>
               </div>
             </div>
           </div>
-          
-          <!-- Demo 3 -->
+            <!-- Community Interaction Demo -->
           <div class="embla__slide">
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2">
-              <div class="aspect-video bg-slate-50 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="w-16 h-16 mx-auto mb-3 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <svg class="w-6 h-6 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                    </svg>
-                  </div>
-                  <p class="text-slate-600 text-sm">Play Demo</p>
-                </div>
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video 
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src={demoVideo} type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div class="p-4">
                 <h4 class="font-semibold text-slate-900 mb-2">Community Planning Challenge</h4>
-                <p class="text-slate-600 text-sm">Agents collaborate to solve complex planning problems, demonstrating emergent collective intelligence and coordination.</p>
+                <p class="text-slate-600 text-fluid-sm">Multi-agent collaboration in complex planning scenarios, demonstrating emergent social behaviors and collective problem-solving capabilities.</p>
               </div>
             </div>
           </div>

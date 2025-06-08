@@ -1,4 +1,6 @@
 ---
+// Import the main demo video
+import demoVideo from '../assets/videos/demo.mp4'
 ---
 
 <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
@@ -12,17 +14,17 @@
     <div class="absolute bottom-40 left-20 w-1 h-1 bg-slate-400 opacity-30"></div>
     <div class="absolute bottom-20 right-10 w-1 h-1 bg-slate-500 opacity-40"></div>
   </div>
-    <main class="relative z-10 max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center">
-    <div class="space-y-10 pt-32 pb-8">      <h1 class="hero-animate text-5xl md:text-7xl mb-4 font-bold leading-tight text-slate-900">
+    <main class="relative z-10 max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center">    <div class="space-y-8 pt-32 pb-8">
+      <h1 class="hero-animate text-fluid-4xl mb-4 font-bold leading-tight text-slate-900">
         Virtual Community
       </h1>
         <!-- Subtitle -->
-      <p class="hero-animate hero-animate-delay text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
+      <p class="hero-animate hero-animate-delay text-fluid-xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
         An Open World Simulation Platform for <span class="text-slate-900 font-semibold">Multi-Agent Embodied AI</span>
-      </p>      <!-- CTA Buttons -->
-      <div class="hero-animate hero-animate-delay-2 flex flex-col sm:flex-row gap-6 justify-center items-center stagger-children">
-        <a href="#demo" class="group inline-flex items-center px-8 py-4 bg-slate-900 text-white font-semibold rounded hover:bg-slate-800 transition-all shadow hover:shadow-md">
-          <span>Explore Demo</span>
+      </p><!-- CTA Buttons -->
+      <div class="hero-animate hero-animate-delay-2 flex flex-wrap gap-4 justify-center items-center stagger-children">
+        <a href="/docs" class="group inline-flex items-center px-8 py-4 bg-slate-900 text-white font-semibold rounded hover:bg-slate-800 transition-all shadow hover:shadow-md">
+          <span>Get Started</span>
           <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
@@ -35,18 +37,19 @@
           Read Research
         </a>
       </div>        <!-- Main Video Placeholder -->
-      <div class="hero-animate hero-animate-delay-3 py-8 max-w-4xl mx-auto">
-        <div class="relative bg-white border border-slate-200 overflow-hidden group hover:border-slate-300 transition-colors shadow-sm">
-          <div class="aspect-video flex items-center justify-center bg-slate-50">
-            <div class="text-center">
-              <div class="w-20 h-20 mx-auto mb-4 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                <svg class="w-8 h-8 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                </svg>
-              </div>
-              <p class="text-slate-700 font-medium">Main Platform Demo Video</p>
-              <p class="text-sm text-slate-500 mt-1">Overview of Virtual Community capabilities</p>
-            </div>
+      <div class="hero-animate hero-animate-delay-3 py-6 max-w-4xl mx-auto">        <div class="relative bg-white border border-slate-200 overflow-hidden group hover:border-slate-300 transition-colors shadow-sm">
+          <div class="aspect-video bg-slate-50 overflow-hidden">
+            <video 
+              class="w-full h-full object-cover"
+              controls
+              autoplay
+              loop
+              preload="metadata"
+              poster=""
+            >
+              <source src={demoVideo} type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
