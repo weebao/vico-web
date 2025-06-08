@@ -1,0 +1,530 @@
+---
+title: "Agent API Reference"
+description: "Complete API documentation for the Agent class and related functionality in Virtual Community"
+category: "api"
+order: 1
+tags: ["api", "agent", "reference", "documentation"]
+author: "Virtual Community API Team"
+publishedDate: 2025-06-01
+lastModified: 2025-06-07
+featured: true
+difficulty: "intermediate"
+draft: false
+---
+
+# Agent API Reference
+
+The `Agent` class is the core component for creating and managing AI entities in Virtual Community. This reference provides comprehensive documentation for all agent-related functionality.
+
+## Class: Agent
+
+```python
+class Agent:
+    """
+    Represents an AI agent in the Virtual Community simulation.
+    
+    Agents can perceive their environment, make decisions, and take actions
+    to achieve their goals while interacting with other agents and the environment.
+    """
+```
+
+### Constructor
+
+```python
+def __init__(
+    self,
+    name: str,
+    agent_type: str = "generic",
+    position: Optional[Vector3] = None,
+    orientation: Optional[Quaternion] = None,
+    capabilities: List[str] = None,
+    goals: List[str] = None,
+    personality: Optional[PersonalityProfile] = None,
+    memory_capacity: int = 1000,
+    learning_rate: float = 0.01,
+    **kwargs
+) -> None
+```
+
+#### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `name` | `str` | *required* | Unique identifier for the agent |
+| `agent_type` | `str` | `"generic"` | Agent classification (e.g., "resident", "visitor", "worker") |
+| `position` | `Vector3` | `None` | Initial 3D position in the environment |
+| `orientation` | `Quaternion` | `None` | Initial orientation (defaults to facing forward) |
+| `capabilities` | `List[str]` | `None` | List of agent abilities (e.g., ["cooking", "driving"]) |
+| `goals` | `List[str]` | `None` | High-level objectives for the agent |
+| `personality` | `PersonalityProfile` | `None` | Personality traits affecting behavior |
+| `memory_capacity` | `int` | `1000` | Maximum number of memories to retain |
+| `learning_rate` | `float` | `0.01` | Rate of behavior adaptation |
+
+#### Example
+
+```python
+from vico import Agent, Vector3, PersonalityProfile
+
+# Create a basic agent
+agent = Agent(
+    name="Alice",
+    agent_type="resident",
+    position=Vector3(10.0, 0.0, 15.0),
+    capabilities=["cooking", "gardening", "socializing"],
+    goals=["maintain_home", "build_relationships"]
+)
+
+# Create an agent with personality
+personality = PersonalityProfile(
+    openness=0.8,
+    conscientiousness=0.7,
+    extraversion=0.6,
+    agreeableness=0.9,
+    neuroticism=0.3
+)
+
+social_agent = Agent(
+    name="Bob",
+    agent_type="community_organizer", 
+    personality=personality,
+    capabilities=["event_planning", "public_speaking"],
+    goals=["organize_events", "increase_community_engagement"]
+)
+```
+
+## Core Methods
+
+### Perception
+
+#### `perceive(radius: float = 10.0) -> PerceptionData`
+
+Gathers information about the agent's surroundings.
+
+```python
+def perceive(self, radius: float = 10.0) -> PerceptionData:
+    """
+    Perceive the environment within the specified radius.
+    
+    Args:
+        radius: Maximum distance for perception
+        
+    Returns:
+        PerceptionData containing visible objects, agents, and environmental features
+    """
+```
+
+**Example:**
+```python
+# Get perception data
+perception = agent.perceive(radius=15.0)
+
+# Access perceived information
+nearby_agents = perception.agents
+visible_objects = perception.objects
+environmental_features = perception.environment
+
+print(f"Found {len(nearby_agents)} nearby agents")
+```
+
+#### `can_see(target: Union[Agent, GameObject]) -> bool`
+
+Check if the agent can see a specific target.
+
+```python
+can_see_target = agent.can_see(other_agent)
+if can_see_target:
+    agent.approach(other_agent)
+```
+
+### Movement and Navigation
+
+#### `move_to(destination: Vector3, speed: float = 1.0) -> bool`
+
+Move the agent to a specific location.
+
+```python
+def move_to(
+    self, 
+    destination: Vector3, 
+    speed: float = 1.0,
+    avoid_obstacles: bool = True
+) -> bool:
+    """
+    Move to the specified destination.
+    
+    Args:
+        destination: Target 3D position
+        speed: Movement speed multiplier
+        avoid_obstacles: Enable obstacle avoidance
+        
+    Returns:
+        True if movement was initiated successfully
+    """
+```
+
+**Example:**
+```python
+# Move to a specific location
+kitchen_location = Vector3(5.0, 0.0, 8.0)
+success = agent.move_to(kitchen_location, speed=1.5)
+
+if success:
+    print("Agent is moving to the kitchen")
+```
+
+#### `follow_path(waypoints: List[Vector3]) -> None`
+
+Follow a predefined path through multiple waypoints.
+
+```python
+# Define a patrol route
+patrol_route = [
+    Vector3(0, 0, 0),
+    Vector3(10, 0, 0), 
+    Vector3(10, 0, 10),
+    Vector3(0, 0, 10)
+]
+
+agent.follow_path(patrol_route)
+```
+
+### Communication
+
+#### `send_message(recipient: Agent, content: str, message_type: str = "text") -> bool`
+
+Send a message to another agent.
+
+```python
+def send_message(
+    self,
+    recipient: Agent,
+    content: str,
+    message_type: str = "text",
+    priority: int = 1
+) -> bool:
+    """
+    Send a message to another agent.
+    
+    Args:
+        recipient: Target agent
+        content: Message content
+        message_type: Type of message ("text", "action_request", "info_share")
+        priority: Message priority (1-5, higher is more urgent)
+        
+    Returns:
+        True if message was sent successfully
+    """
+```
+
+**Example:**
+```python
+# Send a greeting
+agent.send_message(
+    recipient=other_agent,
+    content="Hello! Would you like to join me for lunch?",
+    message_type="social_invitation",
+    priority=2
+)
+```
+
+#### `receive_messages() -> List[Message]`
+
+Retrieve all pending messages.
+
+```python
+messages = agent.receive_messages()
+for message in messages:
+    print(f"From {message.sender}: {message.content}")
+    
+    # Respond to invitations
+    if message.message_type == "social_invitation":
+        agent.send_message(
+            recipient=message.sender,
+            content="Yes, I'd love to join you!",
+            message_type="response"
+        )
+```
+
+### Actions and Interactions
+
+#### `interact_with(target: Union[Agent, GameObject], interaction_type: str) -> bool`
+
+Interact with objects or other agents.
+
+```python
+def interact_with(
+    self,
+    target: Union[Agent, GameObject],
+    interaction_type: str,
+    duration: float = 1.0,
+    parameters: Dict[str, Any] = None
+) -> bool:
+    """
+    Interact with a target object or agent.
+    
+    Args:
+        target: Object or agent to interact with
+        interaction_type: Type of interaction
+        duration: How long the interaction lasts
+        parameters: Additional interaction parameters
+        
+    Returns:
+        True if interaction was successful
+    """
+```
+
+**Example:**
+```python
+# Interact with a computer
+computer = environment.get_object("computer_01")
+agent.interact_with(
+    target=computer,
+    interaction_type="use",
+    duration=30.0,
+    parameters={"task": "research", "application": "browser"}
+)
+
+# Shake hands with another agent
+agent.interact_with(
+    target=other_agent,
+    interaction_type="handshake",
+    duration=2.0
+)
+```
+
+### Memory and Learning
+
+#### `remember(event: Event, importance: float = 1.0) -> None`
+
+Store an event in the agent's memory.
+
+```python
+from vico.memory import Event
+
+# Create and store a memory
+meeting_event = Event(
+    type="social_interaction",
+    participants=[agent.name, other_agent.name],
+    location=agent.position,
+    timestamp=simulation.current_time,
+    details={"topic": "community_project", "outcome": "positive"}
+)
+
+agent.remember(meeting_event, importance=0.8)
+```
+
+#### `recall(query: str, limit: int = 10) -> List[Event]`
+
+Retrieve memories matching a query.
+
+```python
+# Recall past social interactions
+social_memories = agent.recall("social_interaction", limit=5)
+
+# Recall memories involving a specific agent
+bob_memories = agent.recall(f"participants:{other_agent.name}")
+```
+
+#### `learn_from_experience(outcome: str, reward: float) -> None`
+
+Update behavior based on experience.
+
+```python
+# Positive reinforcement for successful interaction
+agent.learn_from_experience("successful_collaboration", reward=1.0)
+
+# Negative feedback for failed task
+agent.learn_from_experience("task_failure", reward=-0.5)
+```
+
+## Properties
+
+### Basic Properties
+
+```python
+# Read-only properties
+agent.name           # str: Agent's unique name
+agent.agent_type     # str: Agent classification
+agent.position      # Vector3: Current 3D position
+agent.orientation    # Quaternion: Current orientation
+agent.velocity       # Vector3: Current velocity
+agent.energy_level   # float: Current energy (0.0-1.0)
+agent.mood          # str: Current emotional state
+
+# Modifiable properties
+agent.goals         # List[str]: Current objectives
+agent.capabilities  # List[str]: Available abilities
+agent.speed         # float: Movement speed multiplier
+```
+
+### Status Properties
+
+```python
+# Check agent state
+if agent.is_moving:
+    print("Agent is currently moving")
+    
+if agent.is_interacting:
+    print(f"Agent is interacting with {agent.current_interaction_target}")
+    
+if agent.is_idle:
+    print("Agent is available for new tasks")
+```
+
+## Events and Callbacks
+
+### Event Handlers
+
+Register callback functions for agent events:
+
+```python
+def on_goal_achieved(goal: str):
+    print(f"Agent {agent.name} achieved goal: {goal}")
+
+def on_interaction_started(target, interaction_type):
+    print(f"Started {interaction_type} with {target}")
+
+def on_message_received(message):
+    print(f"Received message: {message.content}")
+
+# Register event handlers
+agent.on_goal_achieved = on_goal_achieved
+agent.on_interaction_started = on_interaction_started  
+agent.on_message_received = on_message_received
+```
+
+### Custom Behaviors
+
+Implement custom behavior patterns:
+
+```python
+from vico.behaviors import Behavior
+
+class HostBehavior(Behavior):
+    def __init__(self):
+        super().__init__("host_behavior")
+    
+    def execute(self, agent: Agent, context: dict) -> str:
+        # Greet nearby agents
+        nearby = agent.perceive().agents
+        for other_agent in nearby:
+            if not other_agent.has_been_greeted:
+                agent.send_message(
+                    other_agent, 
+                    "Welcome to the community!"
+                )
+                other_agent.has_been_greeted = True
+        
+        return "greeting_complete"
+
+# Add custom behavior to agent
+host_behavior = HostBehavior()
+agent.add_behavior(host_behavior)
+```
+
+## Advanced Features
+
+### Personality Integration
+
+Agents can have detailed personality profiles that affect their behavior:
+
+```python
+from vico.personality import PersonalityProfile, TraitInfluence
+
+# Create personality profile
+personality = PersonalityProfile(
+    traits={
+        'openness': 0.8,          # Open to new experiences
+        'conscientiousness': 0.9,  # Organized and responsible
+        'extraversion': 0.6,       # Moderately social
+        'agreeableness': 0.7,      # Cooperative
+        'neuroticism': 0.2         # Emotionally stable
+    }
+)
+
+# Define how traits influence behavior
+trait_influences = {
+    'extraversion': TraitInfluence('social_interaction_frequency', 0.8),
+    'conscientiousness': TraitInfluence('task_completion_priority', 0.9),
+    'openness': TraitInfluence('exploration_tendency', 0.7)
+}
+
+personality.set_influences(trait_influences)
+agent.personality = personality
+```
+
+### Multi-Modal Communication
+
+Agents support various communication modalities:
+
+```python
+# Verbal communication
+agent.speak("Hello everyone!")
+
+# Gesture communication
+agent.gesture("wave", target=other_agent)
+
+# Written communication
+agent.write_note("Meeting at 3 PM in the library", location="bulletin_board")
+
+# Digital communication
+agent.send_email(
+    recipient="community_manager",
+    subject="Event Proposal",
+    body="I'd like to organize a community garden project..."
+)
+```
+
+## Error Handling
+
+Common exceptions and how to handle them:
+
+```python
+from vico.exceptions import (
+    AgentNotFoundException,
+    InvalidActionException,
+    PathfindingException,
+    CommunicationException
+)
+
+try:
+    agent.move_to(destination)
+except PathfindingException as e:
+    print(f"Cannot reach destination: {e}")
+    # Try alternative route
+    agent.move_to(alternative_destination)
+
+try:
+    agent.interact_with(target, "invalid_action")
+except InvalidActionException as e:
+    print(f"Invalid interaction: {e}")
+    # Use a valid interaction type
+    agent.interact_with(target, "examine")
+```
+
+## Performance Considerations
+
+### Optimization Tips
+
+1. **Limit perception frequency** for better performance:
+```python
+agent.set_perception_interval(0.5)  # Perceive every 0.5 seconds
+```
+
+2. **Use efficient pathfinding** for large environments:
+```python
+agent.set_pathfinding_algorithm("hierarchical_a_star")
+```
+
+3. **Manage memory usage** in long-running simulations:
+```python
+agent.enable_memory_compression()
+agent.set_memory_cleanup_interval(100)  # Clean up every 100 memories
+```
+
+## See Also
+
+- [Multi-Agent Systems](/docs/multi-agent-systems) - Coordinating multiple agents
+- [Environment API](/docs/environment-api) - Interacting with the simulation environment
+- [Behavior Trees](/docs/behavior-trees) - Complex behavior modeling
+- [Communication Protocols](/docs/communication) - Advanced messaging systems

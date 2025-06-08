@@ -1,0 +1,55 @@
+---
+export interface SidebarItem {
+  title: string;
+  link: string;
+  category?: string;
+  order?: number;
+}
+
+export interface Props {
+  items: SidebarItem[];
+  currentSlug?: string;
+}
+
+const { items, currentSlug } = Astro.props;
+
+// Sort items by their order
+const sortedItems = items.sort((a, b) => {
+  const aOrder = a.order || 999;
+  const bOrder = b.order || 999;
+  return aOrder - bOrder;
+});
+
+// Function to check if a link is active
+const isActive = (link: string) => {
+  return currentSlug === link.replace('/docs/', '');
+};
+---
+
+<!-- Sidebar -->
+<aside class="hidden lg:block lg:col-span-1">
+  <div class="lg:sticky lg:top-24">
+    <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
+      <h2 class="text-lg font-semibold text-slate-900 mb-6">Documentation</h2>
+      
+      <nav>
+        <ul class="space-y-1">
+          {sortedItems.map((item) => (
+            <li>
+              <a 
+                href={item.link}
+                class={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                  isActive(item.link) 
+                    ? 'bg-slate-900 text-white font-medium' 
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</aside>

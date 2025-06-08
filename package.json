@@ -9,9 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.8.0",
     "embla-carousel": "^8.6.0",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "zod": "^3.25.56"
   }
 }

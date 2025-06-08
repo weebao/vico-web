@@ -1,24 +1,57 @@
 ---
+export interface Props {
+  sidebarItems?: Array<{
+    title: string;
+    link: string;
+    category?: string;
+    order?: number;
+  }>;
+  currentSlug?: string;
+  isDocsPage?: boolean;
+}
+
+const { sidebarItems = [], currentSlug, isDocsPage = false } = Astro.props;
+
+// Function to check if a link is active
+const isActive = (link: string) => {
+  return currentSlug === link.replace('/docs/', '');
+};
+
+// Sort sidebar items by their order
+const sortedSidebarItems = sidebarItems.sort((a, b) => {
+  const aOrder = a.order || 999;
+  const bOrder = b.order || 999;
+  return aOrder - bOrder;
+});
 ---
 
-<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+<nav class="fixed top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="" class="text-2xl font-bold text-slate-900">
+        <a href="/" class="text-2xl font-bold text-slate-900">
           Virtual Community
         </a>
       </div>
-        <div class="ml-10 flex items-baseline space-x-4">
-          <a href="#features" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Features</a>
-          <a href="#demo" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Demo</a>
-          <a href="#authors" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Authors</a>
-          <a href="#demo" class="bg-slate-900 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all">Get Started</a>
-        </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex ml-10 items-baseline space-x-4">
+        <a href="/docs" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Documentation</a>
+        <a href="/#features" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Features</a>
+        <a href="/#demo" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Demo</a>
+        <a href="/#authors" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Authors</a>
+        <a href="/docs/getting-started" class="bg-slate-900 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-all">Get Started</a>
       </div>
       
+      <!-- Mobile menu button -->
       <div class="md:hidden">
-        <button type="button" class="text-gray-400 hover:text-white">
+        <button 
+          type="button" 
+          id="mobile-menu-button"
+          class="text-slate-600 hover:text-slate-900 p-2"
+          aria-label="Open menu"
+        >
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -26,4 +59,134 @@
       </div>
     </div>
   </div>
+  <!-- Mobile Menu Overlay -->
+  <div 
+    id="mobile-menu-overlay" 
+    class="fixed h-dvh w-dvh inset-0 z-50 bg-black/50 opacity-0 invisible transition-all duration-300 md:hidden"
+  ></div>
+  <!-- Mobile Menu Sidebar -->
+  <div 
+    id="mobile-menu-sidebar" 
+    class="fixed top-0 right-0 h-dvh w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 z-[60] md:hidden overflow-y-visible border-l border-slate-200"
+  >
+    <!-- Mobile Menu Header -->
+    <div class="flex bg-white justify-between items-center p-4 border-b border-slate-200">
+      <h2 class="text-lg font-semibold text-slate-900">Menu</h2>
+      <button 
+        type="button" 
+        id="mobile-menu-close"
+        class="text-slate-600 hover:text-slate-900 p-2"
+        aria-label="Close menu"
+      >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Content -->
+    <div class="p-4">
+      <!-- Main Navigation Links -->
+      <div class="mb-6">
+        <ul class="space-y-1">
+          <li>
+            <a href="/" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/docs" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+              Documentation
+            </a>
+          </li>
+          <li>
+            <a href="/#features" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+              Features
+            </a>
+          </li>
+          <li>
+            <a href="/#demo" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+              Demo
+            </a>
+          </li>
+          <li>
+            <a href="/#authors" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
+              Authors
+            </a>
+          </li>
+          <li>
+            <a href="/docs/getting-started" class="block px-3 py-2 text-sm bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-colors">
+              Get Started
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Documentation Sidebar (only show on docs pages) -->
+      {isDocsPage && sortedSidebarItems.length > 0 && (
+        <div class="border-t border-slate-200 pt-6">
+          <h3 class="text-sm font-semibold text-slate-900 mb-3">Documentation</h3>
+          <ul class="space-y-1">
+            {sortedSidebarItems.map((item) => (
+              <li>
+                <a 
+                  href={item.link}
+                  class={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                    isActive(item.link) 
+                      ? 'bg-slate-900 text-white font-medium' 
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </div>
 </nav>
+
+<script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const closeButton = document.getElementById('mobile-menu-close');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const sidebar = document.getElementById('mobile-menu-sidebar');
+
+    function openMenu() {
+      overlay?.classList.remove('opacity-0', 'invisible');
+      overlay?.classList.add('opacity-100', 'visible');
+      sidebar?.classList.remove('translate-x-full');
+      sidebar?.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      overlay?.classList.remove('opacity-100', 'visible');
+      overlay?.classList.add('opacity-0', 'invisible');
+      sidebar?.classList.remove('translate-x-0');
+      sidebar?.classList.add('translate-x-full');
+      document.body.style.overflow = '';
+    }
+
+    menuButton?.addEventListener('click', openMenu);
+    closeButton?.addEventListener('click', closeMenu);
+    overlay?.addEventListener('click', closeMenu);
+
+    // Close menu when clicking on links
+    const menuLinks = sidebar?.querySelectorAll('a');
+    menuLinks?.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+  });
+</script>
