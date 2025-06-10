@@ -18,6 +18,12 @@ import charlotte from "../assets/videos/charlotte.mp4";
 import detroitDrone from "../assets/videos/detroit_drone.mp4";
 import detroitH1 from "../assets/videos/detroit_humanoid.mp4";
 import detroitGo2 from "../assets/videos/detroit_go2.mp4";
+import florenceScene from "../assets/videos/FLORENCEscene.mp4";
+import madridScene from "../assets/videos/MADRIDscene.mp4";
+import denverScene from "../assets/videos/DENVERscene.mp4";
+import bratislavaScene from "../assets/videos/BRATISLAVAscene.mp4";
+import belgradeScene from "../assets/videos/BELGRADEscene.mp4";
+import detroitScene from "../assets/videos/DETROITscene.mp4";
 ---
 
 <section id="demo" class="py-24 bg-white">
@@ -79,100 +85,40 @@ import detroitGo2 from "../assets/videos/detroit_go2.mp4";
     </div>
 
     <!-- Agent Communities -->
-    <div class="mb-20 fade-in-up">
-      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-        Scene-Grounded Agent Communities
-      </h3>
-      <div class="embla" id="agent-carousel">
-        <div class="embla__container">
-          <!-- Contact Manipulation Demo -->
-          <div class="embla__slide">
-            <div
-              class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2"
-            >
-              <div class="aspect-video bg-slate-50 overflow-hidden">
-                <video
-                  class="w-full h-full object-cover"
-                  controls
-                  preload="metadata"
-                  poster=""
-                >
-                  <source src={manipContactVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div class="p-4">
-                <h4 class="font-semibold text-slate-900 mb-2">
-                  Contact-based Manipulation
-                </h4>
-                <p class="text-slate-600 text-fluid-sm">
-                  Agents demonstrate sophisticated object manipulation skills
-                  with direct contact, showcasing realistic physical
-                  interactions and dexterous control.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- No-Contact Manipulation Demo -->
-          <div class="embla__slide">
-            <div
-              class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2"
-            >
-              <div class="aspect-video bg-slate-50 overflow-hidden">
-                <video
-                  class="w-full h-full object-cover"
-                  controls
-                  preload="metadata"
-                  poster=""
-                >
-                  <source src={manipNoContactVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div class="p-4">
-                <h4 class="font-semibold text-slate-900 mb-2">
-                  Non-Contact Manipulation
-                </h4>
-                <p class="text-slate-600 text-fluid-sm">
-                  Advanced manipulation techniques using indirect methods,
-                  demonstrating intelligent problem-solving and creative tool
-                  use without direct contact.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Community Interaction Demo -->
-          <div class="embla__slide">
-            <div
-              class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow mx-2"
-            >
-              <div class="aspect-video bg-slate-50 overflow-hidden">
-                <video
-                  class="w-full h-full object-cover"
-                  controls
-                  preload="metadata"
-                  poster=""
-                >
-                  <source src={demoVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div class="p-4">
-                <h4 class="font-semibold text-slate-900 mb-2">
-                  Community Planning Challenge
-                </h4>
-                <p class="text-slate-600 text-fluid-sm">
-                  Multi-agent collaboration in complex planning scenarios,
-                  demonstrating emergent social behaviors and collective
-                  problem-solving capabilities.
-                </p>
-              </div>
-            </div>
-          </div>
+<!-- Scene-Grounded Agent Communities -->
+<div class="mb-20 fade-in-up">
+  <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
+    Scene-Grounded Agent Communities
+  </h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {[
+      { src: florenceScene, label: "Florence Community" },
+      { src: madridScene, label: "Madrid Community" },
+      { src: denverScene, label: "Denver Community" },
+      { src: bratislavaScene, label: "Bratislava Community" },
+      { src: belgradeScene, label: "Belgrade Community" },
+      { src: detroitScene, label: "Detroit Community" },
+    ].map(({ src, label }) => (
+      <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+        <div class="aspect-video bg-slate-50 overflow-hidden">
+          <video
+            class="w-full h-full object-cover"
+            controls
+            preload="metadata"
+          >
+            <source src={src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="p-4 text-center">
+          <h4 class="font-semibold text-slate-900 text-fluid-base">
+            {label}
+          </h4>
         </div>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
         <!-- Physically Real Simulation for Embodied Multi-Agent -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
