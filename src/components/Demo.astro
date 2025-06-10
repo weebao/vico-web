@@ -15,6 +15,9 @@ import london from "../assets/videos/london.mp4";
 import detroit from "../assets/videos/detroit.mp4";
 import denver from "../assets/videos/denver.mp4";
 import charlotte from "../assets/videos/charlotte.mp4";
+import detroitDrone from "../assets/videos/detroit_drone.mp4";
+import detroitH1 from "../assets/videos/detroit_humanoid.mp4";
+import detroitGo2 from "../assets/videos/detroit_go2.mp4";
 ---
 
 <section id="demo" class="py-24 bg-white">
@@ -168,6 +171,37 @@ import charlotte from "../assets/videos/charlotte.mp4";
             </div>
           </div>
         </div>
+      </div>
+    </div>
+        <!-- Physically Real Simulation for Embodied Multi-Agent -->
+    <div class="mb-20 fade-in-up">
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
+        Physically Real Simulation for Embodied Multi-Agent
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { src: detroitDrone, label: "Detroit Drone View" },
+          { src: detroitH1, label: "Detroit - Agent H1 Perspective" },
+          { src: detroitGo2, label: "Detroit - GO2 Interaction" },
+        ].map(({ src, label }) => (
+          <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+            <div class="aspect-video bg-slate-50 overflow-hidden">
+              <video
+                class="w-full h-full object-cover"
+                autoplay
+                muted
+                loop
+                playsinline
+              >
+                <source src={src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-semibold text-slate-900 text-fluid-base">{label}</h4>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </div>
