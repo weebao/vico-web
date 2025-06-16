@@ -3,8 +3,8 @@ title: "Scene Annotation Pipeline"
 description: "Complete pipeline for annotating places and transit in the scene"
 order: 3
 author: "Virtual Community Team"
-publishedDate: 2025-06-15
-lastModified: 2025-06-15
+publishedDate: 2025-06-16
+lastModified: 2025-06-16
 featured: true
 difficulty: "beginner"
 draft: false
@@ -14,24 +14,44 @@ draft: false
 ## Run
 
 <ol class="list-decimal ml-6">
-  <li>Prepare Google Maps Platform API keys with Places API enabled and create google_map_api.txt under the root directory. Then, paste the key into google_map_api.txt</li>
-  <li>Open scripts/annotate_scene_all.sh and modify the scene(s) you want to annotate, for example, if you want to annotate TORONTO:
+  <li>Prepare Google Maps Platform API keys with Places API enabled and create `google_map_api.txt` under the root directory. Then, paste the key into `google_map_api.txt`</li>
+  <li>Open `scripts/annotate_scene_all.sh` and modify the scene(s) you want to annotate, for example, if you want to annotate TORONTO:
 `SCENES=(TORONTO)`</li>
   <li>Run `bash scripts/annotate_scene_all.sh` to start annotation process</li>
 </ol>
 
 ### Reminders
 
-The script supports annotating multiple scenes at once, for example, `SCENES=(TORONTO ZURICH)`, we recommend annotating one scene at a time.
+The script supports annotating multiple scenes at once, for example, `SCENES=(TORONTO ZURICH)`, but we recommend annotating one scene at a time.
 
-## Procedure
+## Procedure Overview
 
-There are 4 steps in the annotation pipeline.
+There are 4 steps in the annotation pipeline. We provide an overview of main sub-steps of each step. Please refer to the source code for full sub-steps.
 
 ### Step 1: Prepare necessary files
+Move `road data`, `building_to_osm_tags.json`, and `center.txt` from `Genesis/genesis/assets/ViCo/scene/v1/SCENE` to `ViCo/assets/scenes/SCENE`.
 
 ### Step 2: Annotate scene places
+<ol class="list-decimal ml-6">
+  <li>Take the top-down bird's-eye view (i.e., global image `global.png`) of the scene, and save the global camera parameters in `global_cam_parameters.json`</li>
+  <li>Search places using the Google Maps Platform API. If too few places are found, lower `search_resolution`</li>
+  <li>Filter places. `filter_distance_square` presets to 300, which means filtered places are in the range of 300m x 300m</li>
+  <li>Generate oriented bounding boxes of all loaded buildings in the format of `(cx,cy,cz,dx,dy,dz,theta)`</li>
+  <li>Generate the obstacle grid and its parameters in `obstacle_grid.pkl`</li>
+  <li>Generate scene-level metadata through accessibility filtering, extra places pruning, probabilistic place filtering, and place/building metadata alignment. This step generates `place_metadata.json` and `building_metadata.json`</li>
+  <li>(Optional) Annotate the global image `global_annotated.png` for places</li>
+</ol>
 
 ### Step 3: Annotate transit and annotate the global image for places and transit
+<ol class="list-decimal ml-6">
+  <li>Generate place clusters for bus, controlled by `num_bus_clusters`</li>
+  <li>Generate bus routes and stops nearest to place clusters for bus</li>
+  <li>Compute bus schedules</li>
+  <li>Generate place clusters for bicycle, controlled by `num_bicycle_clusters`</li>
+  <li>Generate bicycle stations nearest to place clusters for bicycle</li>
+  <li>Generate the annotation image `transit.png` for transit</li>
+  <li>Annotate the global image `global_annotated.png` for places and transit</li>
+</ol>
 
 ### Step 4: Take building photos
+Take a building photo for each building in the scene-level building metadata `building_metadata.json`, under `ViCo/assets/imgs/scenes/SCENE`.
