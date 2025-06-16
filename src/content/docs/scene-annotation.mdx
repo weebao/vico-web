@@ -1,0 +1,37 @@
+---
+title: "Scene Annotation Pipeline"
+description: "Complete pipeline for annotating places and transit in the scene"
+order: 3
+author: "Virtual Community Team"
+publishedDate: 2025-06-15
+lastModified: 2025-06-15
+featured: true
+difficulty: "beginner"
+draft: false
+
+---
+
+## Run
+
+<ol class="list-decimal ml-6">
+  <li>Prepare Google Maps Platform API keys with Places API enabled and create google_map_api.txt under the root directory. Then, paste the key into google_map_api.txt</li>
+  <li>Open scripts/annotate_scene_all.sh and modify the scene(s) you want to annotate, for example, if you want to annotate TORONTO:
+`SCENES=(TORONTO)`</li>
+  <li>Run `bash scripts/annotate_scene_all.sh` to start annotation process</li>
+</ol>
+
+### Reminders
+
+The script supports annotating multiple scenes at once, for example, `SCENES=(TORONTO ZURICH)`, we recommend annotating one scene at a time.
+
+## Procedure
+
+There are 4 steps in the annotation pipeline.
+
+### Step 1: Prepare necessary files
+
+### Step 2: Annotate scene places
+
+### Step 3: Annotate transit and annotate the global image for places and transit
+
+### Step 4: Take building photos
