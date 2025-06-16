@@ -1,0 +1,56 @@
+---
+title: "Character Generation Pipeline"
+description: "Complete pipeline for generating multi-agent community in the scene"
+order: 4
+author: "Virtual Community Team"
+publishedDate: 2025-06-16
+lastModified: 2025-06-16
+featured: true
+difficulty: "beginner"
+draft: false
+
+---
+
+## Run
+
+<ol class="list-decimal ml-6">
+  <li>
+  Prepare the OPENAI GPT-4o API key and create `.api_keys.json` under the root directory. Then, copy the following into `.api_keys.json`:
+  ```
+  {
+    "all": [
+      {
+          "AZURE_ENDPOINT": "YOUR ENDPOINT HERE",
+          "OPENAI_API_KEY": "YOUR KEY HERE"
+      }
+    ]
+  }
+  ```
+  </li>
+  <li>Open `scripts/generate_characters_all.sh` and modify the scene(s) you want to generate characters, for example, if you want to generate characters for TORONTO:
+`SCENES=(TORONTO)`</li>
+  <li>Run `bash scripts/generate_characters_all.sh` to start generation process</li>
+</ol>
+
+### Reminders
+
+The script supports annotating multiple scenes at once, for example, `SCENES=(TORONTO ZURICH)`, but we recommend annotating one scene at a time.
+
+## Procedure Overview
+
+There are 3 steps in the character generation pipeline. We provide an overview of main sub-steps of each step. Please refer to the source code for full sub-steps.
+
+### Step 1: Generate characters and annotate images of known places
+<ol class="list-decimal ml-6">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ol>
+
+### Step 2: Generate schedules for Ella agent
+
+### Step 3: Offset the xy positions for indoor places

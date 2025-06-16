@@ -78,7 +78,7 @@
   background: none;
   border: none;
   padding: 0;
-  color: rgb(51 65 85); /* slate-700 - light mode text */
+  color: rgb(220, 220, 220); /* slate-700 - light mode text */
   font-size: var(--text-sm);
   line-height: 1.6;
   white-space: pre-wrap;
