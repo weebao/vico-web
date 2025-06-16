@@ -2,6 +2,7 @@
 // Import manipulation videos
 import manipContactVideo from "../assets/videos/manip_contact.mp4";
 import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
+import methodVideo from "../assets/videos/method.mp4";
 ---
 
 <section id="features" class="py-24 bg-gray-50">
@@ -322,8 +323,20 @@ import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
           embodied AI research
         </p>
       </div>
-    </div>
-  </div>
+<div class="py-8 flex justify-center">
+  <video
+    class="rounded-md w-[60%] max-w-full"
+    controls
+    autoplay
+    loop
+    muted
+    playsinline
+  >
+    <source src={methodVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 </section>
 
 <style>
