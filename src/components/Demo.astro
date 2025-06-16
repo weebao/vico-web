@@ -106,20 +106,17 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       { src: amsterdamScene, label: "Amsterdam Community" },
     ].map(({ src, label }) => (
       <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-        <div class="aspect-video bg-slate-50 overflow-hidden">
+        <div class="aspect-square bg-slate-50 overflow-hidden">
           <video
             class="w-full h-full object-cover"
             controls
             preload="metadata"
           >
             <source src={src} type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         </div>
         <div class="p-4 text-center">
-          <h4 class="font-semibold text-slate-900 text-fluid-base">
-            {label}
-          </h4>
+          <h4 class="font-semibold text-slate-900 text-fluid-base">{label}</h4>
         </div>
       </div>
     ))}
