@@ -6,8 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://umass-embodied-agi.github.io/virtual-community/',
-  base: '/',
+  site: 'https://umass-embodied-agi.github.io',
+  base: '/virtual-community',
   integrations: [mdx()],
   vite: {
     plugins: [tailwindcss()]
