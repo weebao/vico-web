@@ -41,6 +41,41 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       </div>
     </div>
 
+    <!-- Scene-Grounded Agent Communities -->
+    <div class="mb-20 fade-in-up">
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
+        Scene-Grounded Agent Communities
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { src: florenceScene, label: "Florence Community" },
+          { src: madridScene, label: "Madrid Community" },
+          { src: denverScene, label: "Denver Community" },
+          { src: bratislavaScene, label: "Bratislava Community" },
+          { src: belgradeScene, label: "Belgrade Community" },
+          { src: detroitScene, label: "Detroit Community" },
+          { src: londonScene, label: "London Community" },
+          { src: newyorkScene, label: "New York Community" },
+          { src: amsterdamScene, label: "Amsterdam Community" },
+        ].map(({ src, label }) => (
+          <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+            <div class="aspect-square bg-slate-50 overflow-hidden">
+              <video
+                class="w-full h-full object-cover"
+                controls
+                preload="metadata"
+              >
+                <source src={src} type="video/mp4" />
+              </video>
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-semibold text-slate-900 text-fluid-base">{label}</h4>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
     <!-- Real-World Aligned Scenes for Simulation -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
@@ -87,45 +122,10 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       </div>
     </div>
 
-    <!-- Agent Communities -->
-<!-- Scene-Grounded Agent Communities -->
-<div class="mb-20 fade-in-up">
-  <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-    Scene-Grounded Agent Communities
-  </h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {[
-      { src: florenceScene, label: "Florence Community" },
-      { src: madridScene, label: "Madrid Community" },
-      { src: denverScene, label: "Denver Community" },
-      { src: bratislavaScene, label: "Bratislava Community" },
-      { src: belgradeScene, label: "Belgrade Community" },
-      { src: detroitScene, label: "Detroit Community" },
-      { src: londonScene, label: "London Community" },
-      { src: newyorkScene, label: "New York Community" },
-      { src: amsterdamScene, label: "Amsterdam Community" },
-    ].map(({ src, label }) => (
-      <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-        <div class="aspect-square bg-slate-50 overflow-hidden">
-          <video
-            class="w-full h-full object-cover"
-            controls
-            preload="metadata"
-          >
-            <source src={src} type="video/mp4" />
-          </video>
-        </div>
-        <div class="p-4 text-center">
-          <h4 class="font-semibold text-slate-900 text-fluid-base">{label}</h4>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-        <!-- Physically Real Simulation for Embodied Multi-Agent -->
+    <!-- Physically Realistic Simulation for Embodied Multi-Agent -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-        Physically Real Simulation for Embodied Multi-Agent
+        Physically Realistic Simulation for Embodied Multi-Agent
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
