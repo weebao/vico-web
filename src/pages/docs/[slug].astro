@@ -32,7 +32,7 @@ const sortedDocs = allDocs.sort((a, b) => {
 // Prepare sidebar data
 const sidebarItems = allDocs.map(docItem => ({
   title: docItem.data.title,
-  link: `/docs/${docItem.slug}`,
+  link: `/virtual-community/docs/${docItem.slug}`,
   order: docItem.data.order || 999
 }));
 
