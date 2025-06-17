@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://virtualcommunityai.github.io',
+  site: 'https://umass-embodied-agi.github.io/virtual-community/',
   base: '/',
   integrations: [mdx()],
   vite: {
