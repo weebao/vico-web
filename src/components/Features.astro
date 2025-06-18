@@ -4,6 +4,10 @@ import manipContactVideo from "../assets/videos/manip_contact.mp4";
 import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
 import methodVideo from "../assets/videos/method.mp4";
 import scenegenVideo from "../assets/videos/scene_gen.mp4";
+import trafficDemoVideo from "../assets/videos/traffic_demo.mp4";
+import manipContactVideo from "../assets/videos/manip_contact.mp4";
+import go2ContactVideo from "../assets/videos/go2_contact.mp4";
+import communityGenVideo from "../assets/videos/community_gen.mp4";
 ---
 
 <section id="features" class="py-24 bg-gray-50">
@@ -55,10 +59,10 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
                 Real World Aligned Outdoor Scenes
               </div>
               <div class="text-slate-600 text-sm">
-                Geospatial data ensures the realism, diversity, and scale of outdoor 3D scenes.
+                Geospatial data ensures the diversity and scale of outdoor 3D scenes.
               </div>
               <video
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover mt-2"
                 controls
                 preload="metadata"
               >
@@ -76,45 +80,38 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
               <div class="text-slate-600 text-sm">
                 Locations and objects automatically labeled within scenes
               </div>
-              <!-- TODO: put onedrive: annotation demo/annotation.png (will update this image) -->
+              <img
+                class="w-full h-auto object-cover mt-2"
+                src="/virtual-community/images/annotation.png"
+                alt="Semantic Annotations Example"
+              />
             </div>
           </div>
 
           <div class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
-            <div>
+            <div class="flex-1">
               <div class="text-slate-900 font-semibold">
                 Interactive Indoor Scenes and Objects
               </div>
               <div class="text-slate-600 text-sm">
                 Indoor scenes and objects created according to place annotations.
               </div>
-            </div>
-              <!-- TODO: put 2 rows of images / gifs, maybe 2 images in each row (1 row for architect scenes under onedrive: indoor demo/Indoor_XXX.gif, with caption "generated with Architect"; 1 row for GRUTopia under onedrive: indoor demo/XXX.png, with catpion "retrieved from GRUTopia dataset") -->
-          </div>
-        </div>
 
-        <!-- Technical Details -->
-        <div class="mt-6 pt-6 border-t border-slate-200">
-          <div class="text-sm text-slate-600 mb-3">Technical Pipeline:</div>
-          <div class="grid grid-cols-2 gap-3 text-xs">
-            <div class="bg-slate-50 p-2 border border-slate-200">
-              <div class="text-slate-700 font-semibold">Geometry</div>
-              <div class="text-slate-600">Mesh simplification</div>
-            </div>
-            <div class="bg-slate-50 p-2 border border-slate-200">
-              <div class="text-slate-700 font-semibold">Texture</div>
-              <div class="text-slate-600">Enhancement & repair</div>
-            </div>
-            <div class="bg-slate-50 p-2 border border-slate-200">
-              <div class="text-slate-700 font-semibold">Objects</div>
-              <div class="text-slate-600">Interactive placement</div>
-            </div>
-            <div class="bg-slate-50 p-2 border border-slate-200">
-              <div class="text-slate-700 font-semibold">Indoor</div>
-              <div class="text-slate-600">Multi-room generation</div>
+              <div class="mt-4 space-y-6">
+                <div>
+                  <div class="flex">
+                    <img src="/virtual-community/images/office.png" alt="GRUTopia scene 1" class="w-1/2 h-auto shadow object-cover" />
+                    <img src="/virtual-community/images/restaurant.png" alt="GRUTopia scene 2" class="w-1/2 h-auto shadow object-cover" />
+                  </div>
+                  <div class="text-center text-xs text-slate-500 mt-1">Retrieved from GRUTopia dataset</div>
+                </div>
+              </div>
             </div>
           </div>
+
+
+
         </div>
       </div>
 
@@ -141,7 +138,7 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
             </svg>
           </div>
           <h3 class="text-fluid-xl font-bold text-slate-900">
-            Scene-Grounded Agent Community Simulation
+            Scene-Grounded Agent Community
           </h3>
         </div>
 
@@ -160,8 +157,14 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
               <div class="text-slate-600 text-sm">
                 LLM-powered profiles with personalities and social connections
               </div>
+              <video
+                class="w-full h-full object-cover mt-2"
+                controls
+                preload="metadata"
+              >
+                <source src={communityGenVideo} type="video/mp4" />
+              </video>
             </div>
-            <!-- TODO: put onedrive: framework_demo/community_gen.mp4 -->
           </div>
 
           <div class="flex items-start space-x-3">
@@ -171,186 +174,49 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
                 Automatic traffic system
               </div>
               <div class="text-slate-600 text-sm">
-                Traffic system that coordinates bus transit, vehicle flows, and background pedestrain flows in community
+                pedestrian flow, vehicle flow, transit system
               </div>
+              <video
+                class="w-full h-full object-cover mt-2"
+                controls
+                preload="metadata"
+              >
+                <source src={trafficDemoVideo} type="video/mp4" />
+              </video>
             </div>
-            <!-- TODO: put onedrive: traffic demo/traffic demo.mp4-->
           </div>
 
           <div class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
-            <div>
+            <div class="flex-1">
               <div class="text-slate-900 font-semibold">
                 Physically realistic simulation
               </div>
               <div class="text-slate-600 text-sm">
-                Genesis engine powers physically realistic robot interactions in the community
+                Genesis powers physically realistic robot interactions in the community
               </div>
-            </div>
-            <!-- TODO: put onedrive: robot demo/manip_contact (caption: Robot simulation with contact visualized)-->
-          </div>
-        </div>
-        <!-- Agent Interaction Text Placeholder -->
-        <div class="mt-6 pt-6 border-t border-slate-200">
-          <div class="text-sm text-slate-600 mb-3">
-            Agent Interaction Examples:
-          </div>
-          <div class="space-y-2">
-            <div class="bg-slate-50 p-3 border border-slate-200">
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center space-x-3">
-                  <div class="w-10 h-10 bg-slate-200 border border-slate-300 flex items-center justify-center">
-                    <span class="text-xs font-bold text-slate-700">CT</span>
-                  </div>
-                  <div>
-                    <div class="text-slate-900 font-semibold text-sm">Chad Thompson</div>
-                    <div class="text-slate-600 text-xs">Groups: ["Berlin Foodies Club"]</div>
-                  </div>
-                </div>
-                <div class="text-xs text-slate-600">
-                  Living: Palais
-                </div>
-              </div>
-              <div class="text-xs text-slate-500">Lifestyle: Social, Values: Community</div>
-            </div>
-            
-            <div class="bg-slate-50 p-3 border border-slate-200">
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center space-x-3">
-                  <div class="w-10 h-10 bg-slate-200 border border-slate-300 flex items-center justify-center">
-                    <span class="text-xs font-bold text-slate-700">KN</span>
-                  </div>
-                  <div>
-                    <div class="text-slate-900 font-semibold text-sm">Kate Novak</div>
-                    <div class="text-slate-600 text-xs">Groups: ["Campus"], Student</div>
-                  </div>
-                </div>
-                <div class="text-xs text-slate-600">
-                  Living: McCormick
-                </div>
-              </div>
-              <div class="text-xs text-slate-500">Cash: $50, Values: Education, Growth</div>
-            </div>
 
-            <div class="bg-slate-50 p-3 border border-slate-200">
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center space-x-3">
-                  <div class="w-10 h-10 bg-slate-200 border border-slate-300 flex items-center justify-center">
-                    <span class="text-xs font-bold text-slate-700">EM</span>
-                  </div>
-                  <div>
-                    <div class="text-slate-900 font-semibold text-sm">Elon Musk</div>
-                    <div class="text-slate-600 text-xs">Values: Power, Innovation</div>
-                  </div>
+              <!-- Video row -->
+              <div class="mt-4">
+                <div class="flex">
+                  <video class="w-1/2 h-auto shadow object-cover" controls preload="metadata">
+                    <source src={manipContactVideo} type="video/mp4" />
+                  </video>
+                  <video class="w-1/2 h-auto shadow object-cover" controls preload="metadata">
+                    <source src={go2ContactVideo} type="video/mp4" />
+                  </video>
                 </div>
-                <div class="text-xs text-slate-600">
-                  Cash: $1000
+                <div class="text-center text-xs text-slate-500 mt-2">
+                  Robot simulation with contact visualized
                 </div>
               </div>
-              <div class="text-xs text-slate-500">Lifestyle: Innovative, Entrepreneur</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Additional Features Grid -->
-    <div class="grid md:grid-cols-3 gap-6 mt-16 stagger-children">
-      <div class="bg-white p-6 border border-slate-200 shadow-sm text-center">
-        <div
-          class="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto mb-4"
-        >
-          <svg
-            class="w-5 h-5 text-slate-600"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-        </div>
-        <h4 class="text-lg font-semibold text-slate-900 mb-2">
-          Dynamic Traffic
-        </h4>
-        <p class="text-slate-600 text-sm">
-          Automated traffic generation with vehicles, pedestrians, and transit
-          system based on real road networks
-        </p>
-      </div>
-
-      <div class="bg-white p-6 border border-slate-200 shadow-sm text-center">
-        <div
-          class="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto mb-4"
-        >
-          <svg
-            class="w-5 h-5 text-slate-600"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-            ></path>
-          </svg>
-        </div>
-        <h4 class="text-lg font-semibold text-slate-900 mb-2">
-          Daily Schedules Completion
-        </h4>
-        <p class="text-slate-600 text-sm">
-          Agents carry out realistic daily routines based on automatically
-          generated activity schedules
-        </p>
-      </div>
-
-      <div class="bg-white p-6 border border-slate-200 shadow-sm text-center">
-        <div
-          class="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto mb-4"
-        >
-          <svg
-            class="w-5 h-5 text-slate-600"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-            ></path>
-          </svg>
-        </div>
-        <h4 class="text-lg font-semibold text-slate-900 mb-2">
-          Research Challenges
-        </h4>
-        <p class="text-slate-600 text-sm">
-          Community Planning and Community Robot challenges for advancing
-          embodied AI research
-        </p>
-      </div>
-
 </section>
-
-<section id="method-video" class="h-[60vh] flex items-center justify-center bg-gray-50">
-  <video
-    class="h-full rounded-md"
-    controls
-    autoplay
-    loop
-    muted
-    playsinline
-  >
-    <source src={methodVideo} type="video/mp4" />
-  </video>
-</section>
-
 
 <style>
   /* Scroll Animation Styles */
