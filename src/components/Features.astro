@@ -6,6 +6,7 @@ import methodVideo from "../assets/videos/method.mp4";
 import scenegenVideo from "../assets/videos/scene_gen.mp4";
 import trafficDemoVideo from "../assets/videos/traffic_demo.mp4";
 import manipContactVideo from "../assets/videos/manip_contact.mp4";
+import go2ContactVideo from "../assets/videos/go2_contact.mp4";
 import communityGenVideo from "../assets/videos/community_gen.mp4";
 ---
 
@@ -197,42 +198,35 @@ import communityGenVideo from "../assets/videos/community_gen.mp4";
 
           <div class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
-            <div>
+            <div class="flex-1">
               <div class="text-slate-900 font-semibold">
                 Physically realistic simulation
               </div>
               <div class="text-slate-600 text-sm">
                 Genesis engine powers physically realistic robot interactions in the community
               </div>
-              <video
-                class="w-full h-full object-cover mt-2"
-                controls
-                preload="metadata"
-              >
-                <source src={manipContactVideo} type="video/mp4" />
-              </video>
+
+              <!-- Video row -->
+              <div class="mt-4">
+                <div class="flex space-x-4">
+                  <video class="w-1/2 h-auto rounded shadow object-cover" controls preload="metadata">
+                    <source src={manipContactVideo} type="video/mp4" />
+                  </video>
+                  <video class="w-1/2 h-auto rounded shadow object-cover" controls preload="metadata">
+                    <source src={go2ContactVideo} type="video/mp4" />
+                  </video>
+                </div>
+                <div class="text-center text-xs text-slate-500 mt-2">
+                  Robot simulation with contact visualized
+                </div>
+              </div>
             </div>
-            
           </div>
         </div>
       </div>
     </div>
 
 </section>
-
-<section id="method-video" class="h-[60vh] flex items-center justify-center bg-gray-50">
-  <video
-    class="h-full rounded-md"
-    controls
-    autoplay
-    loop
-    muted
-    playsinline
-  >
-    <source src={methodVideo} type="video/mp4" />
-  </video>
-</section>
-
 
 <style>
   /* Scroll Animation Styles */
