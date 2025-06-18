@@ -4,6 +4,9 @@ import manipContactVideo from "../assets/videos/manip_contact.mp4";
 import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
 import methodVideo from "../assets/videos/method.mp4";
 import scenegenVideo from "../assets/videos/scene_gen.mp4";
+import trafficDemoVideo from "../assets/videos/traffic_demo.mp4";
+import manipContactVideo from "../assets/videos/manip_contact.mp4";
+import communityGenVideo from "../assets/videos/community_gen.mp4";
 ---
 
 <section id="features" class="py-24 bg-gray-50">
@@ -77,6 +80,11 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
                 Locations and objects automatically labeled within scenes
               </div>
               <!-- TODO: put onedrive: annotation demo/annotation.png (will update this image) -->
+              <img
+                class="w-full h-auto object-cover mt-2"
+                src="/assets/images/annotation_demo/annotation.png"
+                alt="Semantic Annotations Example"
+              />
             </div>
           </div>
 
@@ -161,7 +169,13 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
                 LLM-powered profiles with personalities and social connections
               </div>
             </div>
-            <!-- TODO: put onedrive: framework_demo/community_gen.mp4 -->
+            <video
+              class="w-full h-full object-cover"
+              controls
+              preload="metadata"
+            >
+              <source src={communityGenVideo} type="video/mp4" />
+            </video>
           </div>
 
           <div class="flex items-start space-x-3">
@@ -174,7 +188,13 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
                 Traffic system that coordinates bus transit, vehicle flows, and background pedestrain flows in community
               </div>
             </div>
-            <!-- TODO: put onedrive: traffic demo/traffic demo.mp4-->
+            <video
+              class="w-full h-full object-cover"
+              controls
+              preload="metadata"
+            >
+              <source src={trafficDemoVideo} type="video/mp4" />
+            </video>
           </div>
 
           <div class="flex items-start space-x-3">
@@ -187,7 +207,13 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
                 Genesis engine powers physically realistic robot interactions in the community
               </div>
             </div>
-            <!-- TODO: put onedrive: robot demo/manip_contact (caption: Robot simulation with contact visualized)-->
+            <video
+              class="w-full h-full object-cover"
+              controls
+              preload="metadata"
+            >
+              <source src={manipContactVideo} type="video/mp4" />
+            </video>
           </div>
         </div>
         <!-- Agent Interaction Text Placeholder -->
