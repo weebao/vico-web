@@ -3,6 +3,7 @@
 import manipContactVideo from "../assets/videos/manip_contact.mp4";
 import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
 import methodVideo from "../assets/videos/method.mp4";
+import scenegenVideo from "../assets/videos/scene_gen.mp4";
 ---
 
 <section id="features" class="py-24 bg-gray-50">
@@ -56,7 +57,13 @@ import methodVideo from "../assets/videos/method.mp4";
               <div class="text-slate-600 text-sm">
                 Geospatial data ensures the realism, diversity, and scale of outdoor 3D scenes.
               </div>
-              <!-- TODO: put onedrive: framework_demo/scene_gen.mp4 -->
+              <video
+                class="w-full h-full object-cover"
+                controls
+                preload="metadata"
+              >
+                <source src={scenegenVideo} type="video/mp4" />
+              </video>
             </div>
           </div>
 
