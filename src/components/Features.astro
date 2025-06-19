@@ -7,6 +7,8 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
 import trafficDemoVideo from "../assets/videos/traffic_demo.mp4";
 import go2ContactVideo from "../assets/videos/go2_contact.mp4";
 import communityGenVideo from "../assets/videos/community_gen.mp4";
+import indoor1Video from "../assets/videos/indoor1.mp4";
+import indoor2Video from "../assets/videos/indoor2.mp4";
 import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
 ---
 
@@ -101,10 +103,28 @@ import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
               <div class="mt-4 space-y-6">
                 <div>
                   <div class="flex">
-                    <img src="/images/office.png" alt="GRUTopia scene 1" class="w-1/2 h-auto shadow object-cover" />
-                    <img src="/images/restaurant.png" alt="GRUTopia scene 2" class="w-1/2 h-auto shadow object-cover" />
+                    <VideoLazyLoader
+                      src={indoor1Video}
+                      class="w-1/2 h-auto shadow object-cover"
+                      controls={true}
+                      autoplay={true}
+                      muted={true}
+                      loop={true}
+                      preload="metadata"
+                    />
+                    <VideoLazyLoader
+                      src={indoor2Video}
+                      class="w-1/2 h-auto shadow object-cover"
+                      controls={true}
+                      autoplay={true}
+                      muted={true}
+                      loop={true}
+                      preload="metadata"
+                    />
                   </div>
-                  <div class="text-center text-xs text-slate-500 mt-1">Retrieved from GRUTopia dataset</div>
+                  <div class="text-center text-xs text-slate-500 mt-1">
+                    Retrieved from GRUTopia dataset
+                  </div>
                 </div>
               </div>
             </div>
