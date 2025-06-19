@@ -52,18 +52,17 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
         Scene-Grounded Agent Communities
       </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {
           [
-            { src: florenceScene, label: "Florence Community" },
-            { src: madridScene, label: "Madrid Community" },
-            { src: denverScene, label: "Denver Community" },
-            { src: bratislavaScene, label: "Bratislava Community" },
-            { src: belgradeScene, label: "Belgrade Community" },
-            { src: detroitScene, label: "Detroit Community" },
-            { src: londonScene, label: "London Community" },
-            { src: newyorkScene, label: "New York Community" },
-            { src: amsterdamScene, label: "Amsterdam Community" },
+            { src: florenceScene, label: "Florence" },
+            { src: madridScene, label: "Madrid" },
+            { src: denverScene, label: "Denver" },
+            { src: belgradeScene, label: "Belgrade" },
+            { src: detroitScene, label: "Detroit" },
+            { src: londonScene, label: "London" },
+            { src: newyorkScene, label: "New York" },
+            { src: amsterdamScene, label: "Amsterdam" },
           ].map(({ src, label }) => (
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
               <div class="aspect-square bg-slate-50 overflow-hidden">
@@ -75,6 +74,42 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
                   loop
                 >
                   <source src={src} type="video/mp4" />
+                </video>
+              </div>
+              <div class="p-4 text-center">
+                <h4 class="font-semibold text-slate-900 text-fluid-base">
+                  {label}
+                </h4>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Social Event Demonstrations -->
+    <div class="mb-20 fade-in-up">
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
+        Social Event Demonstrations
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+          [
+            { src: detroitScene, label: "Group Discussion" },
+            { src: bratislavaScene, label: "Assault" },
+          ].map(({ src, label }) => (
+            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video
+                  class="w-full h-full object-cover"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                >
+                  <source src={src} type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
               </div>
               <div class="p-4 text-center">
@@ -100,7 +135,7 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
             { src: amsterdam, label: "Amsterdam, Netherlands" },
             { src: newyork, label: "New York, United States" },
             { src: bratislava, label: "Bratislava, Slovakia" },
-            { src:  brussels, label: "Brussels, Belgium" },
+            { src: brussels, label: "Brussels, Belgium" },
             { src: calgary, label: "Calgary, Canada" },
             { src: hamburg, label: "Hamburg, Germany" },
             { src: columbus, label: "Columbus, United States" },
