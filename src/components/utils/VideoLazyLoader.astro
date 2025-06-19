@@ -1,0 +1,307 @@
+---
+export interface Props {
+  src: string | undefined | null;
+  class?: string;
+  controls?: boolean;
+  autoplay?: boolean;
+  muted?: boolean;
+  loop?: boolean;
+  preload?: "none" | "metadata" | "auto";
+  playsinline?: boolean;
+  poster?: string;
+  width?: string;
+  height?: string;
+}
+
+const {
+  src,
+  class: className = "",
+  controls = false,
+  autoplay = false,
+  muted = false,
+  loop = false,
+  preload = "none", // Changed default to "none" for better performance
+  playsinline = false,
+  poster = "",
+  width,
+  height,
+} = Astro.props;
+
+// Generate a unique ID for this video instance
+const videoId = `video-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="video-lazy-loader" data-video-id={videoId}>
+  {src ? (
+    <>
+      <!-- Loading spinner -->
+      <div class="video-loader-spinner" id={`spinner-${videoId}`}>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading video...</p>
+      </div>
+      
+      <video
+        id={videoId}
+        class={className}
+        data-src={src}
+        controls={controls}
+        autoplay={autoplay}
+        muted={muted}
+        loop={loop}
+        preload={preload}
+        playsinline={playsinline}
+        poster={poster}
+        width={width}
+        height={height}
+        style="display: none;"
+      >
+        <source data-src={src} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </>
+  ) : (
+    <!-- Fallback for missing video -->
+    <div class="video-fallback">
+      <div class="fallback-content">
+        <svg class="fallback-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+        </svg>
+        <p class="fallback-text">Coming Soon</p>
+      </div>
+    </div>
+  )}
+</div>
+
+<script>  // Video lazy loading functionality
+  class VideoLazyLoader {
+    private static initialized = false;
+    private static observer: IntersectionObserver | null = null;
+
+    static init() {
+      if (this.initialized) return;
+      
+      // Create intersection observer for lazy loading with improved settings
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.loadVideo(entry.target as HTMLElement);
+            }
+          });
+        },
+        {
+          threshold: 0.25, // Start loading when 25% visible
+          rootMargin: "100px 0px 100px 0px", // Start loading 100px before entering viewport
+        }
+      );
+
+      // Observe all video containers
+      this.observeVideos();
+      this.initialized = true;
+    }    static observeVideos() {
+      if (!this.observer) return;
+      
+      const videoContainers = document.querySelectorAll('.video-lazy-loader');
+      videoContainers.forEach((container) => {
+        // Only observe containers that have actual videos (not fallbacks)
+        const video = container.querySelector('video');
+        if (video) {
+          this.observer!.observe(container);
+        }
+      });
+    }
+
+    static loadVideo(container: HTMLElement) {
+      const video = container.querySelector('video') as HTMLVideoElement;
+      const source = video.querySelector('source') as HTMLSourceElement;
+      const spinner = container.querySelector('.video-loader-spinner') as HTMLElement;
+      
+      if (!video || !source) return;
+
+      // Check if already loaded
+      if (video.src || source.src) return;
+
+      // Show spinner
+      if (spinner) {
+        spinner.style.display = 'flex';
+      }
+
+      // Load the video source
+      const dataSrc = source.getAttribute('data-src');
+      if (dataSrc) {
+        source.src = dataSrc;
+        video.src = dataSrc;
+        
+        // Add event listeners for better loading experience
+        video.addEventListener('loadstart', () => {
+          console.log('Video loading started');
+        });
+
+        video.addEventListener('canplaythrough', () => {
+          // Hide spinner and show video when ready to play
+          if (spinner) {
+            spinner.style.display = 'none';
+          }
+          video.style.display = 'block';
+        });
+
+        video.addEventListener('error', (e) => {
+          console.error('Video loading failed:', e);
+          if (spinner) {
+            spinner.innerHTML = '<p class="error-text">Failed to load video</p>';
+          }
+        });
+
+        // Start loading
+        video.load();
+        
+        // Stop observing this video
+        if (this.observer) {
+          this.observer.unobserve(container);
+        }
+      }
+    }
+  }
+
+  // Initialize on DOM content loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    VideoLazyLoader.init();
+  });
+  // Re-initialize when new content is added (for dynamic content)
+  const reinitLazyLoader = () => {
+    VideoLazyLoader.observeVideos();
+  };
+
+  // Make reinit function available globally
+  (window as any).reinitVideoLazyLoader = reinitLazyLoader;
+</script>
+
+<style>
+  .video-lazy-loader {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-lazy-loader video {
+    width: 100%;
+    height: 100%;
+    background-color: #f8fafc;
+  }
+
+  /* Loading spinner styles */
+  .video-loader-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8fafc;
+    z-index: 1;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e2e8f0;
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 12px;
+  }
+
+  .loading-text {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+  }
+
+  .error-text {
+    color: #ef4444;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border-width: 2px;
+    }
+    
+    .loading-text,
+    .error-text {
+      font-size: 12px;
+    }
+  }
+  /* Smooth transitions */
+  .video-lazy-loader video {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .video-loader-spinner {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Fallback styles */
+  .video-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8fafc;
+    border: 1px dashed #cbd5e1;
+  }
+
+  .fallback-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .fallback-icon {
+    width: 48px;
+    height: 48px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+  }
+
+  .fallback-text {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* Responsive fallback adjustments */
+  @media (max-width: 768px) {
+    .fallback-icon {
+      width: 36px;
+      height: 36px;
+    }
+    
+    .fallback-text {
+      font-size: 12px;
+    }
+  }
+</style>

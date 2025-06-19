@@ -5,9 +5,9 @@ import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
 import methodVideo from "../assets/videos/method.mp4";
 import scenegenVideo from "../assets/videos/scene_gen.mp4";
 import trafficDemoVideo from "../assets/videos/traffic_demo.mp4";
-import manipContactVideo from "../assets/videos/manip_contact.mp4";
 import go2ContactVideo from "../assets/videos/go2_contact.mp4";
 import communityGenVideo from "../assets/videos/community_gen.mp4";
+import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
 ---
 
 <section id="features" class="py-24 bg-gray-50">
@@ -56,17 +56,18 @@ import communityGenVideo from "../assets/videos/community_gen.mp4";
             <div>
               <div class="text-slate-900 font-semibold">
                 Real World Aligned Outdoor Scenes
-              </div>
-              <div class="text-slate-600 text-sm">
+              </div>              <div class="text-slate-600 text-sm">
                 Geospatial data ensures the diversity and scale of outdoor 3D scenes.
               </div>
-              <video autoplay muted loop
+              <VideoLazyLoader
+                src={scenegenVideo}
                 class="w-full h-full object-cover mt-2"
-                controls
+                autoplay={true}
+                muted={true}
+                loop={true}
+                controls={true}
                 preload="metadata"
-              >
-                <source src={scenegenVideo} type="video/mp4" />
-              </video>
+              />
             </div>
           </div>
 
@@ -151,17 +152,18 @@ import communityGenVideo from "../assets/videos/community_gen.mp4";
             <div>
               <div class="text-slate-900 font-semibold">
                 Agent Community Generation
-              </div>
-              <div class="text-slate-600 text-sm">
+              </div>              <div class="text-slate-600 text-sm">
                 LLM-powered profiles with personalities and social connections
               </div>
-              <video autoplay muted loop
+              <VideoLazyLoader
+                src={communityGenVideo}
                 class="w-full h-full object-cover mt-2"
-                controls
+                autoplay={true}
+                muted={true}
+                loop={true}
+                controls={true}
                 preload="metadata"
-              >
-                <source src={communityGenVideo} type="video/mp4" />
-              </video>
+              />
             </div>
           </div>
 
@@ -170,17 +172,18 @@ import communityGenVideo from "../assets/videos/community_gen.mp4";
             <div>
               <div class="text-slate-900 font-semibold">
                 Automatic traffic system
-              </div>
-              <div class="text-slate-600 text-sm">
+              </div>              <div class="text-slate-600 text-sm">
                 pedestrian flow, vehicle flow, transit system
               </div>
-              <video autoplay muted loop
+              <VideoLazyLoader
+                src={trafficDemoVideo}
                 class="w-full h-full object-cover mt-2"
-                controls
+                autoplay={true}
+                muted={true}
+                loop={true}
+                controls={true}
                 preload="metadata"
-              >
-                <source src={trafficDemoVideo} type="video/mp4" />
-              </video>
+              />
             </div>
           </div>
 
@@ -192,17 +195,27 @@ import communityGenVideo from "../assets/videos/community_gen.mp4";
               </div>
               <div class="text-slate-600 text-sm">
                 Genesis powers physically realistic robot interactions in the community
-              </div>
-
-              <!-- Video row -->
+              </div>              <!-- Video row -->
               <div class="mt-4">
                 <div class="flex">
-                  <video class="w-1/2 h-auto shadow object-cover" controls preload="metadata" autoplay muted loop>
-                    <source src={manipContactVideo} type="video/mp4" />
-                  </video>
-                  <video class="w-1/2 h-auto shadow object-cover" controls preload="metadata" autoplay muted loop>
-                    <source src={go2ContactVideo} type="video/mp4" />
-                  </video>
+                  <VideoLazyLoader
+                    src={manipContactVideo}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                  <VideoLazyLoader
+                    src={go2ContactVideo}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
                 </div>
                 <div class="text-center text-xs text-slate-500 mt-2">
                   Robot simulation with contact visualized
