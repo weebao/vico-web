@@ -1,22 +1,28 @@
 ---
-import { Image } from 'astro:assets';
-import authorData from '../assets/author_images.json';
+import { Image } from "astro:assets";
+import authorData from "../assets/author_images.json";
 
-// Import all images using import.meta.glob (replaces deprecated Astro.glob)
-const images = import.meta.glob('../assets/images/*', { eager: true });
+// Import all images
+const images = import.meta.glob("../assets/images/*", { eager: true });
 
-// Create a mapping of image names to their imports
-const imageMap: Record<string, any> = Object.entries(images).reduce((acc, [path, imageModule]) => {
-  const imageName = path.split('/').pop()?.split('.')[0];
-  if (imageName && imageModule && typeof imageModule === 'object' && 'default' in imageModule) {
-    acc[imageName] = (imageModule as any).default;
-  }
-  return acc;
-}, {} as Record<string, any>);
+const imageMap: Record<string, any> = Object.entries(images).reduce(
+  (acc, [path, imageModule]) => {
+    const imageName = path.split("/").pop()?.split(".")[0];
+    if (
+      imageName &&
+      imageModule &&
+      typeof imageModule === "object" &&
+      "default" in imageModule
+    ) {
+      acc[imageName] = (imageModule as any).default;
+    }
+    return acc;
+  },
+  {} as Record<string, any>
+);
 
-// Helper function to get the correct image for each author
 function getAuthorImage(photoName: string) {
-  const imageName = photoName.split('.')[0];
+  const imageName = photoName.split(".")[0];
   return imageName ? imageMap[imageName] : null;
 }
 ---
@@ -27,44 +33,105 @@ function getAuthorImage(photoName: string) {
       <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
         Research Team
       </h2>
-      <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-        Meet the interdisciplinary team advancing the frontiers of embodied AI and multi-agent simulation
-      </p>
     </div>
-    
+
     <!-- Authors Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-3">
-      {authorData.map(author => (
-        <div class="bg-white p-4 border border-slate-200 shadow-sm text-center group hover:shadow-md transition-shadow">
-          <div class="w-32 h-32 mx-auto mb-2 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors overflow-hidden">
-            {getAuthorImage(author.photo) ? (
-              <Image 
-                src={getAuthorImage(author.photo)} 
-                alt={author.name} 
-                class="w-32 h-32 object-cover"
-                width={128}
-                height={128}
-                format="webp"
-                quality={80}
-              />
-            ) : (
-              <svg class="w-12 h-12 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-              </svg>
-            )}
+      {
+        authorData.map((author) => (
+          <div class="bg-transparent p-4 text-center group hover:shadow-md transition-shadow">
+            <div class="w-32 h-32 mx-auto mb-2 bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-slate-200 transition-colors overflow-hidden">
+              {getAuthorImage(author.photo) ? (
+                <Image
+                  src={getAuthorImage(author.photo)}
+                  alt={author.name}
+                  class="w-32 h-32 object-cover"
+                  width={128}
+                  height={128}
+                  format="webp"
+                  quality={80}
+                />
+              ) : (
+                <svg
+                  class="w-12 h-12 text-slate-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              )}
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-1">
+              {author.url ? (
+                <a
+                  href={author.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-blue-600 transition-colors"
+                >
+                  <>
+                    {author.name}
+                    {author.school && (
+                      <sup class="text-xs align-super text-gray-500 ml-0.5">
+                        {author.school}
+                      </sup>
+                    )}
+                  </>
+                </a>
+              ) : (
+                <>
+                  {author.name}
+                  {author.school && (
+                    <sup class="text-xs align-super text-gray-500 ml-0.5">
+                      {author.school}
+                    </sup>
+                  )}
+                </>
+              )}
+            </h4>
           </div>
-          <h4 class="text-xl font-bold text-slate-900 mb-1">
-            {author.url ? (
-              <a href={author.url} target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors">
-                {author.name}
-              </a>
-            ) : (
-              author.name
-            )}
-          </h4>
-          <p class="text-sm text-slate-600">{author.institution}</p>
-        </div>
-      ))}
+        ))
+      }
+    </div>
+
+    <!-- School Logos -->
+    <div class="mt-12 flex justify-center items-center gap-12">
+      <sup class="text-sm text-gray-500">1</sup>
+      <div class="flex items-center gap-1">
+        <Image
+          src={imageMap["umass"]}
+          alt="UMass"
+          width={300}
+          height={300}
+          class="object-contain"
+        />
+      </div>
+      <div class="flex items-center gap-1">
+        <sup class="text-sm text-gray-500">2</sup>
+        <Image
+          src={imageMap["jhu"]}
+          alt="JHU"
+          width={300}
+          height={300}
+          class="object-contain"
+        />
+      </div>
+      <div class="flex items-center gap-1">
+        <sup class="text-sm text-gray-500">3</sup>
+        <Image
+          src={imageMap["cmu"]}
+          alt="CMU"
+          width={200}
+          height={200}
+          class="object-contain"
+        />
+      </div>
     </div>
   </div>
 </section>
