@@ -19,165 +19,73 @@ Virtual Community is a comprehensive simulation platform that enables researcher
 - **Research Challenges**: Standardized benchmarks for evaluating AI capabilities
 - **Community Tools**: Collaborative features for sharing research and results
 
-## Prerequisites
-
-Before you begin, ensure you have the following installed on your system:
-
-- **Python 3.8+** with pip package manager
-- **Unity 2022.3 LTS** or later
-- **Git** for version control
-- **CUDA-compatible GPU** (recommended for optimal performance)
-
 ## Installation
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/virtualcommunityai/VirtualCommunity
-cd vico
+git clone https://github.com/Virtual-Community-AI/VirtualCommunity
+cd VirtualCommunity
 ```
 
 ### Step 2: Install Dependencies
 
 ```bash
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# We're using python 3.11, cuda 11.7 and ubuntu 24.04. If you are using a different version, please modify the env.yaml file accordingly.
+conda env create -f env.yaml
 
-# Install required packages
-pip install -r requirements.txt
+# Install Genesis from the source:
+cd Genesis
+pip install -e .
+
+# To run the example tour agent, install volume grid lib:
+cd agents/sg
+./setup.sh
 ```
 
-### Step 3: Download Assets
+### Step 3: Assets Preparation
+
+Download the assets from the [Google Drive](https://drive.google.com/drive/u/2/folders/15XR80efNfgdpYi-5dXh3lJ35p9WBqFc5) and organize them under `Genesis/genesis/assets/ViCo`.
+
+<br />
+Assets include:
+<ul class="list-disc ml-6">
+  <li>`scene` folder: contains the generated outdoor 3D scenes</li>
+  <li>`robots` folder: contains the robot models</li>
+  <li>`objects` folder: contains the object models</li>
+  <li>`avatars` folder: contains the human avatars' skin and motion</li>
+  <li>`cars` folder: contains the vehicle models including car, bus, bike, etc</li>
+</ul>
+<br />
+
+If you want to use indoor scenes from GRUTopia, please follow their instructions [here](https://github.com/OpenRobotLab/GRUtopia?tab=readme-ov-file#%EF%B8%8F-assets) to download the commercial_scenes.zip, and unzip it under `Genesis/genesis/assets/ViCo/`.
+<br />
+
+After this step, the directory structure should be:
+
+```
+Genesis/genesis/assets/ViCo/
+├── scene/
+├── robots/
+├── objects/
+├── avatars/
+├── cars/
+└── commercial_scenes/ (optional)
+```
+
+## Run the Simulation
+
+Run the following script to test the simulation, where 15 agents will tour around the New York Scene.
 
 ```bash
-# Download environment assets (this may take a few minutes)
-python scripts/download_assets.py
+./scripts/run_tour_agent.sh
 ```
 
-### Step 4: Verify Installation
+Tips: Loading all indoor scenes and objects may take around 40G memory. If you encounter memory issues, consider adding `--no_load_indoor_scene` flag to the script to disable indoor scenes.
 
-```bash
-# Run the setup verification script
-python scripts/verify_setup.py
-```
+## TroubleShooting
 
-If everything is installed correctly, you should see a green checkmark for each component.
-
-## Your First Simulation
-
-Let's create a simple simulation with multiple agents in a community environment.
-
-### 1. Initialize a New Project
-
-```python
-from vico import VirtualCommunity, Agent, Environment
-
-# Create a new community simulation
-community = VirtualCommunity()
-
-# Load a pre-built environment
-env = Environment.load('suburban_neighborhood')
-community.set_environment(env)
-```
-
-### 2. Add Agents
-
-```python
-# Create different types of agents
-residents = [
-    Agent(name='Alice', type='resident', goal='daily_routine'),
-    Agent(name='Bob', type='resident', goal='social_interaction'),
-    Agent(name='Charlie', type='visitor', goal='exploration')
-]
-
-# Add agents to the community
-for agent in residents:
-    community.add_agent(agent)
-```
-
-### 3. Run the Simulation
-
-```python
-# Configure simulation parameters
-config = {
-    'duration': 3600,  # 1 hour in simulation time
-    'time_scale': 10,  # 10x real-time speed
-    'enable_logging': True
-}
-
-# Start the simulation
-results = community.run(config)
-```
-
-### 4. Analyze Results
-
-```python
-# View simulation statistics
-print(f"Simulation completed in {results.duration} seconds")
-print(f"Total interactions: {results.interactions.count()}")
-
-# Export data for further analysis
-results.export_to_csv('my_first_simulation.csv')
-```
-
-## Understanding the Output
-
-After running your first simulation, you'll find several output files:
-
-- **`simulation_log.json`**: Detailed event log with timestamps
-- **`agent_trajectories.csv`**: Movement paths for each agent
-- **`interactions.csv`**: Social interactions between agents
-- **`performance_metrics.json`**: System performance statistics
-
-## Next Steps
-
-Now that you have Virtual Community running, you can explore more advanced features:
-
-1. **[Environment Customization](/docs/environment-setup)** - Learn to create custom 3D environments
-2. **[Agent Behavior Design](/docs/agent-behaviors)** - Implement sophisticated AI behaviors
-3. **[Research Challenges](/docs/challenges)** - Participate in standardized benchmarks
-4. **[API Reference](/docs/api-overview)** - Explore the complete API documentation
-
-## Common Issues
-
-### GPU Memory Errors
-
-If you encounter GPU memory issues:
-
-```python
-# Reduce the number of concurrent agents
-community.set_max_agents(50)
-
-# Enable memory optimization
-community.enable_memory_optimization()
-```
-
-### Performance Optimization
-
-For better performance on large simulations:
-
-```python
-# Use distributed computing
-community.enable_distributed_mode()
-
-# Optimize rendering quality
-env.set_render_quality('medium')
-```
-
-## Getting Help
-
-- **Documentation**: Browse our complete [documentation](/docs)
-- **Community Forum**: Join discussions on our [community forum](https://community.virtualcommunity.org)
-- **GitHub Issues**: Report bugs on [GitHub](https://github.com/virtual-community/vico/issues)
-- **Discord**: Chat with other researchers on our [Discord server](https://discord.gg/virtualcommunity)
-
-## What's Next?
-
-Congratulations! You've successfully set up Virtual Community and run your first simulation. Here are some recommended next steps:
-
-- Explore the [Tutorial Series](/docs/tutorials) for hands-on learning
-- Check out [Example Projects](/docs/examples) for inspiration
-- Join our [Research Community](/docs/research-community) to collaborate with other researchers
-
-Ready to dive deeper? Let's move on to [Environment Setup](/docs/environment-setup) to learn how to create and customize your simulation environments.
+<ul class="list-disc ml-6">
+  <li>`libstdcxx. so.6: version GLIBCXX 3.4.32’not found required by sg/builder/builtin/libbuider.so` To resolve this issue, you may need to update your GCC runtime. You can do this by running:```bash conda install -c conda-forge libstdcxx-ng```</li>
+  <li>Only _pygltflib-1.16.0_ works for now, the latest version _pygltflib-1.16.1_ will slower the scene loading.</li>
+</ul>
