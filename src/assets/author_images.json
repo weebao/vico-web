@@ -1,47 +1,88 @@
 [
   {
     "name": "Qinhong Zhou",
-    "role": "Ph.D. Student",
-    "image": "./images/qinhong_zhou.png"
+    "photo": "phd_qinhong.png",
+    "institution": "University of Massachusetts Amherst",
+    "url": "https://zhouqqhh.github.io/"
   },
   {
     "name": "Hongxin Zhang",
-    "role": "Ph.D. Student",
-    "image": "./images/hongxin_zhang.jpg"
+    "photo": "phd_hongxin.jpg",
+    "institution": "University of Massachusetts Amherst",
+    "url": "https://icefoxzhx.github.io/"
   },
   {
-    "name": "Jiageng Liu",
-    "role": "Ph.D. Student",
-    "image": "./images/jiageng_liu.png"
+    "name": "Xiangye Lin",
+    "photo": "placeholder.jpg",
+    "institution": "University of Massachusetts Amherst"
   },
   {
-    "name": "Lixing Fang",
-    "role": "Ph.D. Student",
-    "image": "./images/lixing_fang.jpg"
+    "name": "Zheyuan Zhang",
+    "photo": "zheyuan_zhang.jpg",
+    "institution": "Johns Hopkins University"
+  },
+  {
+    "name": "Yutian Chen",
+    "photo": "yutian_chen.jpg",
+    "institution": "Carnegie Mellon University"
   },
   {
     "name": "Wenjun Liu",
-    "role": "Ph.D. Student",
-    "image": "./images/wenjun_liu.png"
+    "photo": "ms_wenjun.png",
+    "institution": "University of Massachusetts Amherst"
+  },
+  {
+    "name": "Jincheng Yang",
+    "photo": "placeholder.jpg",
+    "institution": "University of Massachusetts Amherst"
   },
   {
     "name": "Sunli Chen",
-    "role": "Ph.D. Student",
-    "image": "./images/sunli_chen.png"
+    "photo": "phd_sunli.png",
+    "institution": "University of Massachusetts Amherst",
+    "url": "https://eeeeeerickkk.github.io/"
   },
   {
-    "name": "Zhehuan Chen",
-    "role": "Master Student",
-    "image": "./images/zhehuan_chen.png"
+    "name": "Lixing Fang",
+    "photo": "phd_lixing.jpg",
+    "institution": "University of Massachusetts Amherst",
+    "url": "https://owenowl.github.io/"
   },
   {
-    "name": "Bao Chi Dang",
-    "role": "Undergraduate Student",
-    "image": "./images/bao_chi_dang.jpg"
+    "name": "Xinyu Sun",
+    "photo": "xinyu_sun.jpg",
+    "institution": "Tencent Robotics X Lab"
   },
   {
     "name": "Zeyuan Wang",
-    "role": "Ph.D. Student",
-    "image": "./images/zeyuan_wang.jpg"
+    "photo": "zeyuan_wang.jpg",
+    "institution": "University of Massachusetts Amherst"
+  },
+  {
+    "name": "Zunzhe Zhang",
+    "photo": "zunzhe_zhang.jpg",
+    "institution": "University of Massachusetts Amherst"
+  },
+  {
+    "name": "Daksha Ladia",
+    "photo": "daksha_ladia.jpg",
+    "institution": "University of Massachusetts Amherst"
+  },
+  {
+    "name": "Jiageng Liu",
+    "photo": "ms_jiageng.png",
+    "institution": "University of Massachusetts Amherst"
+  },
+  {
+    "name": "Zhehuan Chen",
+    "photo": "ms_zhehuan.png",
+    "institution": "University of Massachusetts Amherst",
+    "url": "https://acmlczh.github.io/"
+  },
+  {
+    "name": "Bao Chi Dang",
+    "photo": "bs_bao.jpg",
+    "institution": "University of Massachusetts Amherst",
+    "url": "https://github.com/weebao"
   }
 ] 
