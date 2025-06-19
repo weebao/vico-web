@@ -10,10 +10,9 @@
     "photo": "phd_hongxin.jpg",
     "institution": "University of Massachusetts Amherst",
     "url": "https://icefoxzhx.github.io/"
-  },
-  {
+  },  {
     "name": "Xiangye Lin",
-    "photo": "placeholder.jpg",
+    "photo": "xiangye_lin.jpg",
     "institution": "University of Massachusetts Amherst"
   },
   {
@@ -49,6 +48,16 @@
     "url": "https://owenowl.github.io/"
   },
   {
+    "name": "Qiushi Lyu",
+    "photo": "qiushi_lyu.png",
+    "institution": "Peking University"
+  },
+  {
+    "name": "Zunzhe Zhang",
+    "photo": "zunzhe_zhang.jpg",
+    "institution": "University of Massachusetts Amherst"
+  },
+  {
     "name": "Xinyu Sun",
     "photo": "xinyu_sun.jpg",
     "institution": "Tencent Robotics X Lab"
@@ -59,9 +68,15 @@
     "institution": "University of Massachusetts Amherst"
   },
   {
-    "name": "Zunzhe Zhang",
-    "photo": "zunzhe_zhang.jpg",
+    "name": "Bao Chi Dang",
+    "photo": "bs_bao.jpg",
     "institution": "University of Massachusetts Amherst"
+  },
+  {
+    "name": "Zhehuan Chen",
+    "photo": "ms_zhehuan.png",
+    "institution": "University of Massachusetts Amherst",
+    "url": "https://acmlczh.github.io/"
   },
   {
     "name": "Daksha Ladia",
@@ -74,15 +89,8 @@
     "institution": "University of Massachusetts Amherst"
   },
   {
-    "name": "Zhehuan Chen",
-    "photo": "ms_zhehuan.png",
-    "institution": "University of Massachusetts Amherst",
-    "url": "https://acmlczh.github.io/"
-  },
-  {
-    "name": "Bao Chi Dang",
-    "photo": "bs_bao.jpg",
-    "institution": "University of Massachusetts Amherst",
-    "url": "https://github.com/weebao"
+    "name": "Chuang Gan",
+    "photo": "pi_chuang.png",
+    "institution": "University of Massachusetts Amherst"
   }
 ] 
