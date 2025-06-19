@@ -1,10 +1,10 @@
 ---
 title: "Getting Started"
-description: "Learn how to set up and start using Virtual Community for multi-agent embodied AI research"
+description: "Learn how to set up and run Virtual Community for embodied social intelligence research"
 order: 1
 author: "Virtual Community Team"
-publishedDate: 2025-06-07
-lastModified: 2025-06-07
+publishedDate: 2025-06-19
+lastModified: 2025-06-19
 featured: true
 difficulty: "beginner"
 draft: false
@@ -12,12 +12,7 @@ draft: false
 
 ## What is Virtual Community?
 
-Virtual Community is a comprehensive simulation platform that enables researchers to study multi-agent interactions in realistic 3D environments. Our platform combines:
-
-- **Scalable 3D Environments**: Indoor and outdoor scenes with realistic physics
-- **Multi-Agent Systems**: Support for hundreds of AI agents with diverse behaviors
-- **Research Challenges**: Standardized benchmarks for evaluating AI capabilities
-- **Community Tools**: Collaborative features for sharing research and results
+Virtual Community is an open-world platform that simulates human-robot coexistence in shared communities, featuring a physics-based multi-agent simulator and real-world 3D scenes to study embodied social intelligence at scale.
 
 ## Installation
 
@@ -38,7 +33,7 @@ conda env create -f env.yaml
 cd Genesis
 pip install -e .
 
-# To run the example tour agent, install volume grid lib:
+# (Optional) To run the example tour agent, install volume grid lib:
 cd agents/sg
 ./setup.sh
 ```
@@ -81,7 +76,7 @@ Run the following script to test the simulation, where 15 agents will tour aroun
 ./scripts/run_tour_agent.sh
 ```
 
-Tips: Loading all indoor scenes and objects may take around 40G memory. If you encounter memory issues, consider adding `--no_load_indoor_scene` flag to the script to disable indoor scenes.
+Tips: Loading all indoor scenes and objects may introduce a large memory cost. If you encounter memory issues, consider adding `--no_load_indoor_scene` flag to the script to disable indoor scenes.
 
 ## TroubleShooting
 
@@ -89,14 +84,3 @@ Tips: Loading all indoor scenes and objects may take around 40G memory. If you e
   <li>`libstdcxx. so.6: version GLIBCXX 3.4.32’not found required by sg/builder/builtin/libbuider.so` To resolve this issue, you may need to update your GCC runtime. You can do this by running:```bash conda install -c conda-forge libstdcxx-ng```</li>
   <li>Only _pygltflib-1.16.0_ works for now, the latest version _pygltflib-1.16.1_ will slower the scene loading.</li>
 </ul>
-
-## Acknowledgement
-
-## Citation
-If you find this work useful, please consider citing:
-```bibtex
-@article{zhou2025virtual,
-  title={Virtual Community: An Open World for Humans, Robots, and Society},
-  year={2025}
-}
-```
