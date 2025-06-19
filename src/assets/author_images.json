@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Qinhong Zhou",
+    "role": "Ph.D. Student",
+    "image": "./images/qinhong_zhou.png"
+  },
+  {
+    "name": "Hongxin Zhang",
+    "role": "Ph.D. Student",
+    "image": "./images/hongxin_zhang.jpg"
+  },
+  {
+    "name": "Jiageng Liu",
+    "role": "Ph.D. Student",
+    "image": "./images/jiageng_liu.png"
+  },
+  {
+    "name": "Lixing Fang",
+    "role": "Ph.D. Student",
+    "image": "./images/lixing_fang.jpg"
+  },
+  {
+    "name": "Wenjun Liu",
+    "role": "Ph.D. Student",
+    "image": "./images/wenjun_liu.png"
+  },
+  {
+    "name": "Sunli Chen",
+    "role": "Ph.D. Student",
+    "image": "./images/sunli_chen.png"
+  },
+  {
+    "name": "Zhehuan Chen",
+    "role": "Master Student",
+    "image": "./images/zhehuan_chen.png"
+  },
+  {
+    "name": "Bao Chi Dang",
+    "role": "Undergraduate Student",
+    "image": "./images/bao_chi_dang.jpg"
+  },
+  {
+    "name": "Zeyuan Wang",
+    "role": "Ph.D. Student",
+    "image": "./images/zeyuan_wang.jpg"
+  }
+] 
