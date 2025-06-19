@@ -11,42 +11,39 @@
     "photo": "phd_hongxin.jpg",
     "institution": "University of Massachusetts Amherst",
     "url": "https://icefoxzhx.github.io/",
-    "main": true,
+    "main": true
   }, 
   {
     "name": "Xiangye Lin",
     "photo": "xiangye_lin.jpg",
     "institution": "University of Massachusetts Amherst",
-    "main": true,
-    
+    "main": true
   },
   {
     "name": "Zheyuan Zhang",
     "photo": "zheyuan_zhang.jpg",
     "institution": "Johns Hopkins University",
     "url": "https://cozheyuanzhangde.github.io/",
-    "main": true,
+    "main": true
     
   },
   {
     "name": "Yutian Chen",
     "photo": "yutian_chen.jpg",
     "institution": "Carnegie Mellon University",
-    "main": false,
-    
+    "main": false
   },
   {
     "name": "Wenjun Liu",
     "photo": "ms_wenjun.png",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
-    
+    "main": false
   },
   {
     "name": "Zunzhe Zhang",
     "photo": "zunzhe_zhang.jpg",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   },
   {
@@ -54,7 +51,7 @@
     "photo": "phd_sunli.png",
     "institution": "University of Massachusetts Amherst",
     "url": "https://eeeeeerickkk.github.io/",
-    "main": false,
+    "main": false
     
   },
   {
@@ -62,42 +59,42 @@
     "photo": "phd_lixing.jpg",
     "institution": "University of Massachusetts Amherst",
     "url": "https://owenowl.github.io/",
-    "main": false,
+    "main": false
     
   },
   {
     "name": "Qiushi Lyu",
     "photo": "qiushi_lyu.png",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   },
   {
     "name": "Xinyu Sun",
     "photo": "xinyu_sun.jpg",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   },
   {
     "name": "Jincheng Yang",
     "photo": "jincheng_yang.jpg",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   },
   {
     "name": "Zeyuan Wang",
     "photo": "zeyuan_wang.jpg",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   },
   {
     "name": "Bao Chi Dang",
     "photo": "bs_bao.jpg",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   },
   {
@@ -105,28 +102,28 @@
     "photo": "ms_zhehuan.png",
     "institution": "University of Massachusetts Amherst",
     "url": "https://acmlczh.github.io/",
-    "main": false,
+    "main": false
     
   },
   {
     "name": "Daksha Ladia",
     "photo": "daksha_ladia.jpg",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   },
   {
     "name": "Jiageng Liu",
     "photo": "ms_jiageng.png",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   },
   {
     "name": "Chuang Gan",
     "photo": "pi_chuang.png",
     "institution": "University of Massachusetts Amherst",
-    "main": false,
+    "main": false
     
   }
 ] 
