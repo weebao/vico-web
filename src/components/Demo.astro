@@ -24,8 +24,11 @@ import detroitH1 from "../assets/videos/DETROIT_humanoid.mp4";
 import detroitGo2 from "../assets/videos/DETROIT_go2.mp4";
 
 // Social Event Demonstrations videos
-import discussionScene from "../assets/videos/DETROITscene.mp4";
-import assaultScene from "../assets/videos/BRATISLAVAscene.mp4";
+import discussionScene from "../assets/videos/detroit_discussion.mp4";
+import robotScene from "../assets/videos/detroit_robot.mp4";
+import assaultScene from "../assets/videos/bratislava_assault.mp4";
+import campaignScene from "../assets/videos/charlotte_campaign.mp4";
+import proposalScene from "../assets/videos/belgrade_proposal.mp4";
 
 // Scene-Grounded Agent Communities videos
 import florenceScene from "../assets/videos/FLORENCEscene.mp4";
@@ -55,14 +58,12 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
         Scene-Grounded Agent Communities
       </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           [
             { src: florenceScene, label: "Florence" },
             { src: madridScene, label: "Madrid" },
             { src: denverScene, label: "Denver" },
-            { src: belgradeScene, label: "Belgrade" },
-            { src: detroitScene, label: "Detroit" },
             { src: londonScene, label: "London" },
             { src: newyorkScene, label: "New York" },
             { src: amsterdamScene, label: "Amsterdam" },
@@ -97,28 +98,38 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
         Social Event Demonstrations
       </h3>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {
           [
             { src: discussionScene, label: "Group Discussion" },
             { src: assaultScene, label: "Assault" },
+            { src: robotScene, label: "Robot Roaming" },
+            { src: campaignScene, label: "Political Campaign" },
+            { src: proposalScene, label: "Public Proposal" },
+            {},
+            {},
+            {},
           ].map(({ src, label }) => (
-            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-              <div class="aspect-video bg-slate-50 overflow-hidden">
-                <video
-                  class="w-full h-full object-cover"
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                >
-                  <source src={src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow min-h-[200px]">
+              <div class="aspect-video bg-slate-50 overflow-hidden flex items-center justify-center">
+                {src ? (
+                  <video
+                    class="w-full h-full object-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                  >
+                    <source src={src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <span class="text-slate-400 text-sm">Coming Soon</span>
+                )}
               </div>
               <div class="p-4 text-center">
                 <h4 class="font-semibold text-slate-900 text-fluid-base">
-                  {label}
+                  {label || "TBD"}
                 </h4>
               </div>
             </div>
