@@ -138,27 +138,17 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       </div>
     </div>
 
-    <!-- Real-World Aligned Scenes for Simulation -->
+    <!-- Physically Realistic Simulation for Embodied Multi-Agent -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-        Real-World Aligned Scenes for Simulation
+        Robot Agents
       </h3>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           [
-            { src: amsterdam, label: "Amsterdam, Netherlands" },
-            { src: newyork, label: "New York, United States" },
-            { src: bratislava, label: "Bratislava, Slovakia" },
-            { src: brussels, label: "Brussels, Belgium" },
-            { src: calgary, label: "Calgary, Canada" },
-            { src: hamburg, label: "Hamburg, Germany" },
-            { src: columbus, label: "Columbus, United States" },
-            { src: florence, label: "Florence, Italy" },
-            { src: london, label: "London, United Kingdom" },
-            { src: detroit, label: "Detroit, United States" },
-            { src: denver, label: "Denver, United States" },
-            { src: charlotte, label: "Charlotte, United States" },
+            { src: detroitDrone, label: "Detroit Drone View" },
+            { src: detroitH1, label: "Detroit - Agent H1 Perspective" },
+            { src: detroitGo2, label: "Detroit - GO2 Interaction" },
           ].map(({ src, label }) => (
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
               <div class="aspect-video bg-slate-50 overflow-hidden">
@@ -184,17 +174,27 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       </div>
     </div>
 
-    <!-- Physically Realistic Simulation for Embodied Multi-Agent -->
+    <!-- Real-World Aligned Scenes for Simulation -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-        Robot Agent
+        Real-World Aligned Scenes for Simulation
       </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {
           [
-            { src: detroitDrone, label: "Detroit Drone View" },
-            { src: detroitH1, label: "Detroit - Agent H1 Perspective" },
-            { src: detroitGo2, label: "Detroit - GO2 Interaction" },
+            { src: amsterdam, label: "Amsterdam, Netherlands" },
+            { src: newyork, label: "New York, United States" },
+            { src: bratislava, label: "Bratislava, Slovakia" },
+            { src: brussels, label: "Brussels, Belgium" },
+            { src: calgary, label: "Calgary, Canada" },
+            { src: hamburg, label: "Hamburg, Germany" },
+            { src: columbus, label: "Columbus, United States" },
+            { src: florence, label: "Florence, Italy" },
+            { src: london, label: "London, United Kingdom" },
+            { src: detroit, label: "Detroit, United States" },
+            { src: denver, label: "Denver, United States" },
+            { src: charlotte, label: "Charlotte, United States" },
           ].map(({ src, label }) => (
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
               <div class="aspect-video bg-slate-50 overflow-hidden">
