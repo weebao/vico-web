@@ -15,21 +15,21 @@ draft: false
 
 <ol class="list-decimal ml-6">
   <li>Prepare the Google Maps Platform API key with Places API enabled and create `google_map_api.txt` under the root directory. Then, paste the key into `google_map_api.txt`</li>
-  <li>Open `scripts/annotate_scene_all.sh` and modify the scene(s) you want to annotate, for example, if you want to annotate TORONTO:
-`SCENES=(TORONTO)`</li>
+  <li>Open `scripts/annotate_scene_all.sh` and modify the scene(s) you want to annotate, for example, if you want to annotate LONDON:
+`SCENES=(LONDON)`</li>
   <li>Run `bash scripts/annotate_scene_all.sh` to start annotation process</li>
 </ol>
 
 ### Reminders
 
-The script supports annotating multiple scenes at once, for example, `SCENES=(TORONTO ZURICH)`, but we recommend annotating one scene at a time.
+The script supports annotating multiple scenes at once, for example, `SCENES=(LONDON TORONTO)`, but we recommend annotating one scene at a time.
 
 ## Procedure Overview
 
-There are 4 steps in the annotation pipeline. We provide an overview of main sub-steps of each step. Please refer to the source code for full sub-steps.
+There are 3 steps in the annotation pipeline. We provide an overview of main sub-steps of each step. Please refer to the source code for full sub-steps.
 
 ### Step 1: Prepare necessary files
-Move `road data`, `building_to_osm_tags.json`, and `center.txt` from `Genesis/genesis/assets/ViCo/scene/v1/SCENE` to `ViCo/assets/scenes/SCENE`.
+Move `center.txt`, `building_to_osm_tags.json`, and `road data` from `Genesis/genesis/assets/ViCo/scene/v1/SCENE` to `ViCo/assets/scenes/SCENE`.
 
 ### Step 2: Annotate scene places
 <ol class="list-decimal ml-6">
@@ -52,6 +52,3 @@ Move `road data`, `building_to_osm_tags.json`, and `center.txt` from `Genesis/ge
   <li>Generate the annotation image `transit.png` for transit</li>
   <li>Annotate the global image `global_annotated.png` for places and transit</li>
 </ol>
-
-### Step 4: Take building photos
-Take a building photo for each building in the scene-level building metadata `building_metadata.json`, under `ViCo/assets/imgs/scenes/SCENE`.
