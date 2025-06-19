@@ -3,21 +3,27 @@
 import demoVideo from "../assets/videos/demo.mp4";
 import manipContactVideo from "../assets/videos/manip_contact.mp4";
 import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
-import amsterdam from "../assets/videos/amsterdam.mp4";
-import newyork from "../assets/videos/newyork.mp4";
-import bratislava from "../assets/videos/bratislava.mp4";
-import elpaso from "../assets/videos/elpaso.mp4";
-import calgary from "../assets/videos/calgary.mp4";
-import hamburg from "../assets/videos/hamburg.mp4";
-import columbus from "../assets/videos/columbus.mp4";
-import florence from "../assets/videos/florence.mp4";
-import london from "../assets/videos/london.mp4";
-import detroit from "../assets/videos/detroit.mp4";
-import denver from "../assets/videos/denver.mp4";
-import charlotte from "../assets/videos/charlotte.mp4";
+
+// Real-World Aligned Scenes for Simulation videos
+import amsterdam from "../assets/videos/gif/amsterdam.mp4";
+import newyork from "../assets/videos/gif/newyork.mp4";
+import bratislava from "../assets/videos/gif/bratislava.mp4";
+import brussels from "../assets/videos/gif/brussels.mp4";
+import calgary from "../assets/videos/gif/calgary.mp4";
+import hamburg from "../assets/videos/gif/hamburg.mp4";
+import columbus from "../assets/videos/gif/columbus.mp4";
+import florence from "../assets/videos/gif/florence.mp4";
+import london from "../assets/videos/gif/london.mp4";
+import detroit from "../assets/videos/gif/detroit.mp4";
+import denver from "../assets/videos/gif/denver.mp4";
+import charlotte from "../assets/videos/gif/charlotte.mp4";
+
+// Detroit detailed videos
 import detroitDrone from "../assets/videos/DETROIT_drone.mp4";
 import detroitH1 from "../assets/videos/DETROIT_humanoid.mp4";
 import detroitGo2 from "../assets/videos/DETROIT_go2.mp4";
+
+// Scene-Grounded Agent Communities videos
 import florenceScene from "../assets/videos/FLORENCEscene.mp4";
 import madridScene from "../assets/videos/MADRIDscene.mp4";
 import denverScene from "../assets/videos/DENVERscene.mp4";
@@ -47,32 +53,36 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
         Scene-Grounded Agent Communities
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { src: florenceScene, label: "Florence Community" },
-          { src: madridScene, label: "Madrid Community" },
-          { src: denverScene, label: "Denver Community" },
-          { src: bratislavaScene, label: "Bratislava Community" },
-          { src: belgradeScene, label: "Belgrade Community" },
-          { src: detroitScene, label: "Detroit Community" },
-          { src: londonScene, label: "London Community" },
-          { src: newyorkScene, label: "New York Community" },
-          { src: amsterdamScene, label: "Amsterdam Community" },
-        ].map(({ src, label }) => (
-          <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-            <div class="aspect-square bg-slate-50 overflow-hidden">
-              <video
-                class="w-full h-full object-cover"
-                controls
-                preload="metadata"
-              >
-                <source src={src} type="video/mp4" />
-              </video>
+        {
+          [
+            { src: florenceScene, label: "Florence Community" },
+            { src: madridScene, label: "Madrid Community" },
+            { src: denverScene, label: "Denver Community" },
+            { src: bratislavaScene, label: "Bratislava Community" },
+            { src: belgradeScene, label: "Belgrade Community" },
+            { src: detroitScene, label: "Detroit Community" },
+            { src: londonScene, label: "London Community" },
+            { src: newyorkScene, label: "New York Community" },
+            { src: amsterdamScene, label: "Amsterdam Community" },
+          ].map(({ src, label }) => (
+            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+              <div class="aspect-square bg-slate-50 overflow-hidden">
+                <video
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                >
+                  <source src={src} type="video/mp4" />
+                </video>
+              </div>
+              <div class="p-4 text-center">
+                <h4 class="font-semibold text-slate-900 text-fluid-base">
+                  {label}
+                </h4>
+              </div>
             </div>
-            <div class="p-4 text-center">
-              <h4 class="font-semibold text-slate-900 text-fluid-base">{label}</h4>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
 
@@ -88,7 +98,7 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
             { src: amsterdam, label: "Amsterdam, Netherlands" },
             { src: newyork, label: "New York, United States" },
             { src: bratislava, label: "Bratislava, Slovakia" },
-            { src: elpaso, label: "El Paso, United States" },
+            { src:  brussels, label: "Brussels, Belgium" },
             { src: calgary, label: "Calgary, Canada" },
             { src: hamburg, label: "Hamburg, Germany" },
             { src: columbus, label: "Columbus, United States" },
@@ -128,29 +138,33 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
         Physically Realistic Simulation for Embodied Multi-Agent
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { src: detroitDrone, label: "Detroit Drone View" },
-          { src: detroitH1, label: "Detroit - Agent H1 Perspective" },
-          { src: detroitGo2, label: "Detroit - GO2 Interaction" },
-        ].map(({ src, label }) => (
-          <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-            <div class="aspect-video bg-slate-50 overflow-hidden">
-              <video
-                class="w-full h-full object-cover"
-                autoplay
-                muted
-                loop
-                playsinline
-              >
-                <source src={src} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+        {
+          [
+            { src: detroitDrone, label: "Detroit Drone View" },
+            { src: detroitH1, label: "Detroit - Agent H1 Perspective" },
+            { src: detroitGo2, label: "Detroit - GO2 Interaction" },
+          ].map(({ src, label }) => (
+            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video
+                  class="w-full h-full object-cover"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                >
+                  <source src={src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="p-4 text-center">
+                <h4 class="font-semibold text-slate-900 text-fluid-base">
+                  {label}
+                </h4>
+              </div>
             </div>
-            <div class="p-4 text-center">
-              <h4 class="font-semibold text-slate-900 text-fluid-base">{label}</h4>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </div>
