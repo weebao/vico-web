@@ -77,21 +77,11 @@ function getAuthorImage(photoName: string) {
                 >
                   <>
                     {author.name}
-                    {author.school && (
-                      <sup class="text-xs align-super text-gray-500 ml-0.5">
-                        {author.school}
-                      </sup>
-                    )}
                   </>
                 </a>
               ) : (
                 <>
                   {author.name}
-                  {author.school && (
-                    <sup class="text-xs align-super text-gray-500 ml-0.5">
-                      {author.school}
-                    </sup>
-                  )}
                 </>
               )}
             </h4>
