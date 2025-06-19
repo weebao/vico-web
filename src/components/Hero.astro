@@ -1,45 +1,112 @@
 ---
 // Import the main demo video
-import demoVideo from '../assets/videos/demo.mp4'
+import demoVideo from "../assets/videos/demo.mp4";
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
+>
   <!-- Clean background -->
   <div class="absolute inset-0 bg-gray-50"></div>
-  
+
   <!-- Subtle accent elements -->
   <div class="absolute inset-0">
     <div class="absolute top-20 left-10 w-1 h-1 bg-slate-400 opacity-30"></div>
     <div class="absolute top-40 right-20 w-1 h-1 bg-slate-500 opacity-40"></div>
-    <div class="absolute bottom-40 left-20 w-1 h-1 bg-slate-400 opacity-30"></div>
-    <div class="absolute bottom-20 right-10 w-1 h-1 bg-slate-500 opacity-40"></div>
+    <div class="absolute bottom-40 left-20 w-1 h-1 bg-slate-400 opacity-30">
+    </div>
+    <div class="absolute bottom-20 right-10 w-1 h-1 bg-slate-500 opacity-40">
+    </div>
   </div>
-    <main class="relative z-10 max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center">    <div class="space-y-8 pt-32 pb-8">
-      <h1 class="hero-animate text-fluid-4xl mb-4 font-bold leading-tight text-slate-900">
+  <main
+    class="relative z-10 max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center"
+  >
+    <div class="space-y-8 pt-32 pb-8">
+      <h1
+        class="hero-animate text-fluid-4xl mb-4 font-bold leading-tight text-slate-900"
+      >
         Virtual Community
       </h1>
-        <!-- Subtitle -->
-      <p class="hero-animate hero-animate-delay text-fluid-xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
-        An Open World for <span class="text-slate-900 font-semibold">Humans, Robots, and Society</span>
+      <!-- Subtitle -->
+      <p
+        class="hero-animate hero-animate-delay text-fluid-xl text-slate-700 max-w-4xl mx-auto leading-relaxed"
+      >
+        An Open World for <span class="text-slate-900 font-semibold"
+          >Humans, Robots, and Society</span
+        >
       </p><!-- CTA Buttons -->
-      <div class="hero-animate hero-animate-delay-2 flex flex-wrap gap-4 justify-center items-center stagger-children">
-        <a href="/virtual-community/docs" class="group inline-flex items-center px-8 py-4 bg-slate-900 text-white font-semibold rounded hover:bg-slate-800 transition-all shadow hover:shadow-md">
-          <span>Get Started</span>
-          <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+      <div
+        class="hero-animate hero-animate-delay-2 flex flex-wrap gap-4 justify-center items-center stagger-children"
+      >
+        <!-- Get Started -->
+        <a
+          href="/virtual-community/docs"
+          class="group inline-flex items-center justify-center w-52 h-16 px-6 py-4 border border-slate-300 text-slate-700 font-semibold rounded hover:border-slate-400 hover:text-slate-900 transition-all"
+        >
+          <span class="mr-2">Get Started</span>
+          <svg
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
-        
-        <a href="#research" class="inline-flex items-center px-8 py-4 border border-slate-300 text-slate-700 font-semibold rounded hover:border-slate-400 hover:text-slate-900 transition-all">
-          <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+
+        <!-- Read Research -->
+        <a
+          href="#research"
+          class="group inline-flex items-center justify-center w-52 h-16 px-6 py-4 bg-slate-900 text-white font-semibold rounded hover:bg-slate-800 transition-all shadow hover:shadow-md"
+        >
+          <svg
+            class="mr-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            ></path>
           </svg>
-          Read Research
+          <span>Read Research</span>
         </a>
-      </div>        <!-- Main Video Placeholder -->
-      <div class="hero-animate hero-animate-delay-3 py-6 max-w-4xl mx-auto">        <div class="relative bg-white border border-slate-200 overflow-hidden group hover:border-slate-300 transition-colors shadow-sm">
+
+        <!-- Try Code -->
+        <a
+          href="https://github.com/Virtual-Community-AI/VirtualCommunity"
+          class="group inline-flex items-center justify-center w-52 h-16 px-6 py-4 border border-slate-300 text-slate-700 font-semibold rounded hover:border-slate-400 hover:text-slate-900 transition-all"
+        >
+          <svg
+            class="mr-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16 18l6-6-6-6M8 6l-6 6 6 6"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          <span>Try Code</span>
+        </a>
+      </div>
+      <!-- Main Video Placeholder -->
+      <div class="hero-animate hero-animate-delay-3 py-6 max-w-4xl mx-auto">
+        <div
+          class="relative bg-white border border-slate-200 overflow-hidden group hover:border-slate-300 transition-colors shadow-sm"
+        >
           <div class="aspect-video bg-slate-50 overflow-hidden">
-            <video 
+            <video
               class="w-full h-full object-cover"
               controls
               autoplay
@@ -48,19 +115,28 @@ import demoVideo from '../assets/videos/demo.mp4'
               preload="metadata"
               poster=""
             >
-              <source src={demoVideo} type="video/mp4">
+              <source src={demoVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
       </div>
     </div>
-  </main>  
+  </main>
   <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
     <div class="animate-bounce">
-      <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      <svg
+        class="w-6 h-6 text-slate-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
   </div>
