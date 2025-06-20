@@ -7,8 +7,8 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
 import trafficDemoVideo from "../assets/videos/traffic_demo.mp4";
 import go2ContactVideo from "../assets/videos/go2_contact.mp4";
 import communityGenVideo from "../assets/videos/community_gen.mp4";
-import indoor1Video from "../assets/videos/indoor1.mp4";
-import indoor2Video from "../assets/videos/indoor2.mp4";
+import indoor1Video from "../assets/videos/indoor1_fixed.mp4";
+import indoor2Video from "../assets/videos/indoor2_fixed.mp4";
 import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
 ---
 
@@ -102,24 +102,27 @@ import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
 
               <div class="mt-4 space-y-6">
                 <div>
-                  <div class="flex">
-                    <VideoLazyLoader
-                      src="images/indoor1.mp4"
-                      class="w-1/2 h-auto shadow object-cover"
-                      controls={true}
-                      autoplay={true}
-                      muted={true}
-                      loop={true}
-                      preload="metadata"></VideoLazyLoader>
-                    <VideoLazyLoader
-                      src="images/indoor2.mp4"
-                      class="w-1/2 h-auto shadow object-cover"
-                      controls={true}
-                      autoplay={true}
-                      muted={true}
-                      loop={true}
-                      preload="metadata"></VideoLazyLoader>
-                  </div>
+
+                <div class="flex">
+                  <VideoLazyLoader
+                    src={indoor1Video}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                  <VideoLazyLoader
+                    src={indoor2Video}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                </div>
                 </div>
               </div>
             </div>
