@@ -1,17 +1,170 @@
 ---
 title: "Character Generation Pipeline"
-description: "Complete pipeline for generating multi-agent community in the scene"
+description: "Pipeline for generating multi-agent community grounded in the scene"
 order: 4
 author: "Virtual Community Team"
-publishedDate: 2025-06-16
-lastModified: 2025-06-16
+publishedDate: 2025-06-19
+lastModified: 2025-06-19
 featured: true
 difficulty: "beginner"
 draft: false
 
 ---
 
-## Run
+## Import Mixamo Characters as Virtual Community Avatars
+
+### Step 1: Download FBX model from Mixamo
+
+Click download, select **FBX Binary (.fbx)** and T-pose.
+
+### Step 2: Process FBX model with Blender
+
+1. Import FBX into Blender  
+   `File -> Import -> FBX (.fbx)`, select one file at a time.
+
+2. Merge meshes if needed  
+   Select all meshes in the outliner, right-click in the 3D Viewport, then click `Join`.  
+   *(Skip if only one mesh)*
+
+3. Decimate the merged mesh  
+   Select the joined mesh, add a `Decimate` modifier, and set collapse ratio to `0.15~0.2` to reduce face count to ~4k–6k.
+
+### Step 3: Export GLB model with Blender
+
+1. Export GLB file  
+   `File -> Export -> glTF 2.0 (.glb/.gltf)`  
+   - Unselect: `Transform -> +Y up`  
+   - Select: `Geometry -> Apply Modifiers`  
+   - Unselect: `Animation -> Animation` and `Shape Keys`
+
+2. Reduce texture resolution using [gltf-transform](https://gltf-transform.dev/):
+  ```
+   gltf-transform resize --width 1024 --height 1024 mixamo_Chad_merge.glb mixamo_Chad_merge.glb
+  ```
+
+## Problem Shooting
+
+### A-1. Vertice joint > total joints
+
+```python
+IndexError: index 194 is out of bounds for axis 0 with size 65
+```
+
+**Solution:** Open and re-save the GLB file with a 3D viewer like *Gestaltor*.
+
+### A-2. Mismatch between skin and motion joints
+
+**Solution:** When downloading motion FBX on Mixamo, select a standard human character like `Jackie` or `Michelle`.
+
+## Load Avatars in Genesis
+
+**Parameters:**
+
+* `motion_data_path`: Path to motion `.pkl`
+* `skin_options`:
+
+  * `glb_path`, `euler`, `pos`
+* `ego_view_options`: Optional
+
+  * `res`, `fov`, `GUI`
+* `frame_ratio`: Frame update ratio
+* `terrain_height_path`: Optional auto-height support
+
+## Actions
+
+### Move forward
+
+* `move(distance[, speed=1])`
+
+### Turn left
+
+* `turn_left(angle[, turn_frame_limit=15])`
+
+### Turn right
+
+* `turn_right(angle[, turn_frame_limit=15])`
+
+### Reach (Touch, Press)
+
+* `reach(hand, object)`
+
+### Pick
+
+* `pick(hand, object)`
+
+### Put
+
+* `put(hand[, position, rotation])`
+
+### Throw
+
+* `throw(hand[, orientation])`
+
+### Open
+
+* `open(hand, object)`
+
+### Close
+
+* `close(hand, object)`
+
+### Sit
+
+* `sit([object, position])`
+
+### Stand up
+
+* `stand_up()`
+
+### Drink
+
+* `drink(hand)`
+
+### Eat
+
+* `eat(hand)`
+
+### Play
+
+* `play(hand, duration)`
+
+### Enter/Exit Vehicles
+
+* `enter_bus(bus)`
+* `exit_bus()`
+* `enter_bike(hand_id, bike)`
+* `exit_bike(hand_id)`
+* `enter_car(hand_id, car)`
+* `exit_car(hand_id)`
+
+## Other Functions
+
+* `reset(global_trans, global_rot)`
+* `spare()`: Return True if avatar is idle
+
+  * `from ViCo.modules.avatar.utils import ActionStatus`
+* `get_global_xy()`
+* `get_global_height()`
+* `get_global_pose()`: Returns `[x, y, z, r, p, y]`
+* `set_global_height(height)`
+* `render_ego_view(rotation_offset, depth, segmentation)`
+
+## Adding Your Own Motions
+
+1. Download motion FBX into:
+   `Genesis/genesis/assets/motions/`
+
+2. Convert to pickle:
+
+   ```bash
+   python convert_fbx.py -e Genesis/genesis/assets/motions/ -o Genesis/genesis/assets/motions/
+   ```
+
+3. Add your module under:
+   `Genesis/genesis/assets/avartars/motions`
+
+
+## Generate Scene-grounded Community of Characters
 
 <ol class="list-decimal ml-6">
   <li>

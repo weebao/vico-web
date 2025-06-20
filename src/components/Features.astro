@@ -7,6 +7,8 @@ import scenegenVideo from "../assets/videos/scene_gen.mp4";
 import trafficDemoVideo from "../assets/videos/traffic_demo.mp4";
 import go2ContactVideo from "../assets/videos/go2_contact.mp4";
 import communityGenVideo from "../assets/videos/community_gen.mp4";
+import indoor1Video from "../assets/videos/indoor1_fixed.mp4";
+import indoor2Video from "../assets/videos/indoor2_fixed.mp4";
 import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
 ---
 
@@ -55,7 +57,7 @@ import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
             <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
             <div>
               <div class="text-slate-900 font-semibold">
-                Real World Aligned Outdoor Scenes
+                Real World Grounded Geospatial Scenes
               </div>              <div class="text-slate-600 text-sm">
                 Geospatial data ensures the diversity and scale of outdoor 3D scenes.
               </div>
@@ -100,17 +102,31 @@ import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
 
               <div class="mt-4 space-y-6">
                 <div>
-                  <div class="flex">
-                    <img src="/images/office.png" alt="GRUTopia scene 1" class="w-1/2 h-auto shadow object-cover" />
-                    <img src="/images/restaurant.png" alt="GRUTopia scene 2" class="w-1/2 h-auto shadow object-cover" />
-                  </div>
-                  <div class="text-center text-xs text-slate-500 mt-1">Retrieved from GRUTopia dataset</div>
+
+                <div class="flex">
+                  <VideoLazyLoader
+                    src={indoor1Video}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                  <VideoLazyLoader
+                    src={indoor2Video}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                </div>
                 </div>
               </div>
             </div>
           </div>
-
-
 
         </div>
       </div>
@@ -138,7 +154,7 @@ import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
             </svg>
           </div>
           <h3 class="text-fluid-xl font-bold text-slate-900">
-            Scene-Grounded Agent Community
+            Agent Community
           </h3>
         </div>
 

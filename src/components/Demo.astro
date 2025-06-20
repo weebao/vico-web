@@ -51,32 +51,32 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
 <section id="demo" class="py-12 lg:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Scene-Grounded Agent Communities -->
+    <!-- Physically Realistic Simulation for Embodied Multi-Agent -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-        Scene-Grounded Agent Communities
+        Robotic Agents
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           [
-            { src: florenceScene, label: "Florence" },
-            { src: madridScene, label: "Madrid" },
-            { src: denverScene, label: "Denver" },
-            { src: londonScene, label: "London" },
-            { src: newyorkScene, label: "New York" },
-            { src: amsterdamScene, label: "Amsterdam" },
+            { src: detroitDrone, label: "Bitcraze Crazyflie 2" },
+            { src: detroitH1, label: "UniTree H1" },
+            { src: detroitGo2, label: "UniTree Go2" },
+            { src: detroitHusky, label: "Husky Robot" },
+            { src: detroitSPOT, label: "Boston Dynamics Spot" },
+            { src: detroitGR, label: "Google Robot" },
           ].map(({ src, label }) => (
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-              <div class="aspect-square bg-slate-50 overflow-hidden">
+              <div class="aspect-video bg-slate-50 overflow-hidden">
                 <video
                   class="w-full h-full object-cover"
-                  controls
-                  preload="metadata"
                   autoplay
                   muted
                   loop
+                  playsinline
                 >
                   <source src={src} type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
               </div>
               <div class="p-4 text-center">
@@ -90,10 +90,10 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       </div>
     </div>
 
-    <!-- Social Event Demonstrations -->
+    <!-- Social Interaction Demonstrations -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-        Social Event Demonstrations
+        Social and Physical Interaction
       </h3>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -136,32 +136,32 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       </div>
     </div>
 
-    <!-- Physically Realistic Simulation for Embodied Multi-Agent -->
+    <!-- Agent Communities -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-        Robot Agents
+        Scene-Grounded Agent Communities
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           [
-            { src: detroitDrone, label: "Bitcraze Crazyflie 2" },
-            { src: detroitH1, label: "UniTree H1" },
-            { src: detroitGo2, label: "UniTree Go2" },
-            { src: detroitHusky, label: "Husky Robot" },
-            { src: detroitSPOT, label: "Boston Dynamics Spot" },
-            { src: detroitGR, label: "Google Robot" },
+            { src: florenceScene, label: "Florence" },
+            { src: madridScene, label: "Madrid" },
+            { src: denverScene, label: "Denver" },
+            { src: londonScene, label: "London" },
+            { src: newyorkScene, label: "New York" },
+            { src: amsterdamScene, label: "Amsterdam" },
           ].map(({ src, label }) => (
             <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-              <div class="aspect-video bg-slate-50 overflow-hidden">
+              <div class="aspect-square bg-slate-50 overflow-hidden">
                 <video
                   class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
                   autoplay
                   muted
                   loop
-                  playsinline
                 >
                   <source src={src} type="video/mp4" />
-                  Your browser does not support the video tag.
                 </video>
               </div>
               <div class="p-4 text-center">
@@ -175,10 +175,10 @@ import amsterdamScene from "../assets/videos/amsterdam.mp4";
       </div>
     </div>
 
-    <!-- Real-World Aligned Scenes for Simulation -->
+    <!-- Real World Grounded Geospatial Scenes -->
     <div class="mb-20 fade-in-up">
       <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
-        Real-World Aligned Scenes for Simulation
+        Real World Grounded Geospatial Scenes
       </h3>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
