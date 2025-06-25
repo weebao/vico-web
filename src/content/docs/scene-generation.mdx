@@ -17,6 +17,9 @@ draft: false
 * Install Inpaint Anything under `inpainting/`: https://github.com/geekyutao/Inpaint-Anything/tree/main
 * Install `upscayl`
 
+## API Key
+* Create an API Key in Google Cloud Console (https://console.cloud.google.com/). Enable the Map Tiles API and Street View Static API in Library (https://console.cloud.google.com/apis/library/), and keep your key in `secret.txt`
+
 ## Run
 * For example: `./pipeline_unity.sh --radius 400 --dataroot data/ --cacheroot cache/ --datapoint datapoint/MIT.txt`. (You can change `MIT.txt` to any another datapoint under `datapoints/`)
 * Currently `Inpainting Street Views` stage can not run in the same env as main pipeline. Need to run it separately in another env.
